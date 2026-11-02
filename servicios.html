@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- ====================================================================
+       METADATOS Y CONFIGURACIÓN SEO DEL DOCUMENTO (HEAD)
+       ==================================================================== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servicios - ILQ Digital | Diseño Web WordPress, Redes, SEO y Formación</title>
+  <meta name="description" content="Servicios de ILQ Digital: Diseño web personalizado en WordPress, integración en redes sociales, ajustes básicos de SEO y seguridad, y formación básica.">
+
+  <!-- Favicon renombrado para SEO -->
+  <link rel="icon" href="img/favicon-ilq-digital.jpg" sizes="32x32" type="image/jpeg">
+
+  <!-- Tipografías Google Fonts: Montserrat y Noto Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Noto+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <!-- Hoja de estilos global -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <a class="enlace-saltar-contenido" href="#contenido-principal">Ir al contenido</a>
+
+  <!-- ====================================================================
+       CABECERA PRINCIPAL DE LA WEB (HEADER)
+       ==================================================================== -->
+  <header class="cabecera-sitio" id="masthead">
+    <div class="cabecera-contenedor">
+
+      <!-- Logotipo -->
+      <div class="cabecera-logo">
+        <a href="index.html" aria-label="ILQ Digital - Ir a Inicio">
+          <img src="img/logo-icono-ilq-digital-diseno-web.png"
+               alt="Logotipo de ILQ Digital Diseño Web y SEO"
+               title="ILQ Digital - Diseño Web en WordPress"
+               width="100" height="100">
+        </a>
+      </div>
+
+      <!-- Botón Hamburguesa Móvil -->
+      <button class="boton-menu-movil" id="boton-menu-movil" aria-label="Abrir menú de navegación" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"></path>
+        </svg>
+      </button>
+
+      <!-- Menú de Navegación + Botón Contacto -->
+      <div class="cabecera-derecha" id="cabecera-navegacion">
+        <nav class="menu-navegacion" aria-label="Navegación principal del sitio">
+          <ul class="menu-lista">
+            <li class="menu-item"><a href="index.html">Inicio</a></li>
+            <li class="menu-item"><a href="sobre-mi.html">Sobre mí</a></li>
+            <li class="menu-item"><a href="servicios.html" class="activo" aria-current="page">Servicios</a></li>
+            <li class="menu-item"><a href="portafolios.html">Portafolios</a></li>
+          </ul>
+        </nav>
+        <a href="contacto.html" class="boton-principal boton-cabecera">Contacto</a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ====================================================================
+       CONTENIDO PRINCIPAL DE LA PÁGINA "SERVICIOS"
+       ==================================================================== -->
+  <main id="contenido-principal">
+
+    <!-- ==================================================================
+         APARTADO 1: HERO BANNER SUPERIOR ("Servicios")
+         Imagen de fondo (img/hero-servicios-diseno-mantenimiento-web.jpg)
+         con superposición oscura al 40% y título H1 blanco centrado.
+         ================================================================== -->
+    <section class="hero-pagina-interna hero-servicios" aria-label="Cabecera de Servicios">
+      <div class="contenedor">
+        <h1>Servicios</h1>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         APARTADO 2: INTRODUCCIÓN "¿QUÉ PUEDO HACER POR TÍ?"
+         Presenta la filosofía de trabajo en WordPress mediante un bloque
+         centrado con línea divisora rosa y 3 bloques destacados (blockquote).
+         ================================================================== -->
+    <section class="seccion-servicios-intro" aria-label="Qué puedo hacer por ti">
+      <div class="servicios-intro-contenedor">
+        <h2>¿Qué puedo hacer por tí?</h2>
+        <span class="divisor-rosa divisor-rosa--centrado" aria-hidden="true"></span>
+
+        <blockquote class="cita-servicio">
+          <p>
+            <strong>Diseño páginas web claras y funcionales</strong><br>
+            Trabajo en webs sencillas, bien estructuradas y adaptadas a lo que realmente necesitas. La idea es que tengas una web que te represente, sea fácil de usar y no se convierta en una carga.
+          </p>
+        </blockquote>
+
+        <blockquote class="cita-servicio">
+          <p>
+            Utilizo WordPress, una herramienta flexible y bastante accesible, que permite crear una web correcta sin complicaciones innecesarias. Me centro en soluciones prácticas y en entender bien cada proyecto antes de tocar nada.
+          </p>
+        </blockquote>
+
+        <blockquote class="cita-servicio">
+          <p>
+            Puedo ayudarte desde el diseño inicial hasta explicarte cómo mantener tu web por tu cuenta, revisando también aspectos básicos de seguridad e integrando tus redes sociales si lo necesitas. Siempre con un trato cercano y explicando las cosas de forma clara.
+          </p>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         APARTADO 3: CUADRÍCULA 2x2 DE SERVICIOS DETALLADOS
+         Cada tarjeta cuenta con:
+         - Imagen con bordes redondeados (30px), sombra desplazada y filtro CSS.
+         - Efecto Push y cambio de opacidad al 50% al pasar el ratón (hover).
+         - Animación de entrada lateral: Fila 1 entra desde la izquierda
+           (slideInLeft) y Fila 2 entra desde la derecha (slideInRight).
+         ================================================================== -->
+    <section class="seccion-servicios-cuadricula" aria-label="Detalle de servicios ofrecidos">
+      <div class="contenedor">
+
+        <!-- SUBAPARTADO 3.1: FILA SUPERIOR (Diseño Web + Integración en redes) -->
+        <div class="servicios-fila">
+
+          <!-- Tarjeta 1: Diseño Web -->
+          <article class="tarjeta-servicio animar-al-scroll animacion-slide-izquierda">
+            <div class="tarjeta-servicio-imagen-envoltorio">
+              <img src="img/servicio-diseno-web-wordpress-responsive.jpg"
+                   alt="Servicio de diseño web personalizado en WordPress adaptable a móvil, tablet y ordenador"
+                   title="Diseño Web en WordPress"
+                   class="imagen-estilo-servicio efecto-hover-push"
+                   width="1024" height="683" loading="lazy">
+            </div>
+            <div class="tarjeta-servicio-contenido">
+              <h5>Diseño Web</h5>
+              <ul class="lista-check-servicios">
+                <li>✅ Diseño personalizado en WordPress.</li>
+                <li>✅ Web adaptada a móvil, tablet y ordenador.</li>
+                <li>✅ Estructura clara y navegación sencilla.</li>
+                <li>✅ Ajustes básicos de velocidad y rendimiento.</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Tarjeta 2: Integración en redes -->
+          <article class="tarjeta-servicio animar-al-scroll animacion-slide-izquierda">
+            <div class="tarjeta-servicio-imagen-envoltorio">
+              <img src="img/servicio-integracion-redes-sociales-web.jpg"
+                   alt="Integración de redes sociales, botones para compartir y contacto por WhatsApp en tu web"
+                   title="Integración en redes sociales"
+                   class="imagen-estilo-servicio efecto-hover-push"
+                   width="1024" height="743" loading="lazy">
+            </div>
+            <div class="tarjeta-servicio-contenido">
+              <h5>Integración en redes</h5>
+              <ul class="lista-check-servicios">
+                <li>✅ Enlaces visibles a tus redes sociales.</li>
+                <li>✅ Botones para compartir tus contenidos.</li>
+                <li>✅ Integración del feed de Instagram (si aplica).</li>
+                <li>✅ Botón de contacto por WhatsApp.</li>
+                <li>✅ Preparación básica de las vistas previas al compartir tu web en redes.</li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- SUBAPARTADO 3.2: FILA INFERIOR (Seo y seguridad + Formación básica) -->
+        <div class="servicios-fila">
+
+          <!-- Tarjeta 3: Seo y seguridad -->
+          <article class="tarjeta-servicio animar-al-scroll animacion-slide-derecha">
+            <div class="tarjeta-servicio-imagen-envoltorio">
+              <img src="img/servicio-optimizacion-seo-seguridad-wordpress.jpg"
+                   alt="Optimización SEO básica e instalación de seguridad esencial en WordPress"
+                   title="SEO y Seguridad Web"
+                   class="imagen-estilo-servicio efecto-hover-push"
+                   width="1024" height="683" loading="lazy">
+            </div>
+            <div class="tarjeta-servicio-contenido">
+              <h5>Seo y seguridad</h5>
+              <ul class="lista-check-servicios">
+                <li>✅ Configuración inicial para que tu web sea indexable por Google.</li>
+                <li>✅ Ajustes básicos de SEO técnico (estructura, títulos y enlaces).</li>
+                <li>✅ Instalación y configuración de plugins esenciales.</li>
+                <li>✅ Revisión de aspectos básicos de seguridad en WordPress.</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Tarjeta 4: Formación básica (con enlace directo a formacion.html) -->
+          <article class="tarjeta-servicio animar-al-scroll animacion-slide-derecha">
+            <div class="tarjeta-servicio-imagen-envoltorio">
+              <a href="formacion.html" aria-label="Ver detalles de Formación básica">
+                <img src="img/servicio-formacion-basica-autonomia-wordpress.jpg"
+                     alt="Espacio de trabajo cómodo con portátil para formación básica de autogestión en WordPress"
+                     title="Formación básica personalizada en WordPress"
+                     class="imagen-estilo-servicio efecto-hover-push"
+                     width="1024" height="683" loading="lazy">
+              </a>
+            </div>
+            <div class="tarjeta-servicio-contenido">
+              <h5><a href="formacion.html">Formación básica</a></h5>
+              <ul class="lista-check-servicios">
+                <li>✅ Si lo deseas, te ofrezco una formación personalizada para que puedas gestionar tu web por tu cuenta, sin depender siempre de terceros.</li>
+                <li>✅ ¿Hablamos?</li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====================================================================
+       PIE DE PÁGINA GLOBAL (FOOTER)
+       ==================================================================== -->
+  <footer class="pie-pagina" id="colophon">
+    <div class="contenedor">
+      <div class="pie-fila-principal">
+
+        <div class="pie-columna-izquierda">
+          <ul class="pie-lista-enlaces">
+            <li><a href="aviso-legal.html">AVISO LEGAL</a></li>
+            <li><a href="privacidad.html">PRIVACIDAD</a></li>
+            <li><a href="cookies.html">COOKIES</a></li>
+          </ul>
+        </div>
+
+        <div class="pie-columna-centro">
+          <a href="index.html" aria-label="ILQ Digital">
+            <img src="img/logo-completo-ilq-digital-wordpress.png"
+                 alt="Logotipo completo de ILQ Digital Diseño y Desarrollo Web"
+                 title="ILQ Digital"
+                 width="150" height="150" loading="lazy">
+          </a>
+        </div>
+
+        <div class="pie-columna-derecha">
+          <ul class="pie-lista-enlaces">
+            <li><a href="index.html">INICIO</a></li>
+            <li><a href="sobre-mi.html">SOBRE MI</a></li>
+            <li><a href="servicios.html">SERVICIOS</a></li>
+            <li><a href="portafolios.html">PORTAFOLIOS</a></li>
+            <li><a href="contacto.html">CONTACTO</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="pie-copyright">
+        <p>Copyright &copy; ILQ Digital | Developed by <a href="index.html">ILQ Digital</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ====================================================================
+       BANNER DE AVISO DE COOKIES
+       ==================================================================== -->
+  <aside class="aviso-cookies" id="aviso-cookies" aria-label="Aviso de uso de cookies">
+    <p>Utilizamos cookies para asegurar que damos la mejor experiencia al usuario en nuestra web. Si sigues utilizando este sitio asumiremos que estás de acuerdo.</p>
+    <div class="aviso-cookies-botones">
+      <button type="button" class="boton-cookie" id="boton-aceptar-cookies">Aceptar</button>
+      <a href="cookies.html" class="boton-cookie boton-cookie--secundario">Política de cookies</a>
+    </div>
+  </aside>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
+

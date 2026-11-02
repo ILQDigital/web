@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- ====================================================================
+       METADATOS Y CONFIGURACIÓN SEO DEL DOCUMENTO (HEAD)
+       ==================================================================== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre mí - ILQ Digital | Diseño Web Cercano en WordPress</title>
+  <meta name="description" content="Conoce la misión de ILQ Digital: acompañarte en tu presencia online con un diseño web cercano, práctico y fácil de gestionar para emprendedores.">
+
+  <!-- Favicon renombrado para SEO -->
+  <link rel="icon" href="img/favicon-ilq-digital.jpg" sizes="32x32" type="image/jpeg">
+
+  <!-- Tipografías Google Fonts: Montserrat y Noto Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Noto+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <!-- Hoja de estilos global -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <a class="enlace-saltar-contenido" href="#contenido-principal">Ir al contenido</a>
+
+  <!-- ====================================================================
+       CABECERA PRINCIPAL DE LA WEB (HEADER)
+       ==================================================================== -->
+  <header class="cabecera-sitio" id="masthead">
+    <div class="cabecera-contenedor">
+
+      <!-- Logotipo -->
+      <div class="cabecera-logo">
+        <a href="index.html" aria-label="ILQ Digital - Ir a Inicio">
+          <img src="img/logo-icono-ilq-digital-diseno-web.png"
+               alt="Logotipo de ILQ Digital Diseño Web y SEO"
+               title="ILQ Digital - Diseño Web en WordPress"
+               width="100" height="100">
+        </a>
+      </div>
+
+      <!-- Botón Hamburguesa Móvil -->
+      <button class="boton-menu-movil" id="boton-menu-movil" aria-label="Abrir menú de navegación" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"></path>
+        </svg>
+      </button>
+
+      <!-- Menú de Navegación + Botón Contacto -->
+      <div class="cabecera-derecha" id="cabecera-navegacion">
+        <nav class="menu-navegacion" aria-label="Navegación principal del sitio">
+          <ul class="menu-lista">
+            <li class="menu-item"><a href="index.html">Inicio</a></li>
+            <li class="menu-item"><a href="sobre-mi.html" class="activo" aria-current="page">Sobre mí</a></li>
+            <li class="menu-item"><a href="servicios.html">Servicios</a></li>
+            <li class="menu-item"><a href="portafolios.html">Portafolios</a></li>
+          </ul>
+        </nav>
+        <a href="contacto.html" class="boton-principal boton-cabecera">Contacto</a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ====================================================================
+       CONTENIDO PRINCIPAL DE LA PÁGINA "SOBRE MÍ"
+       ==================================================================== -->
+  <main id="contenido-principal">
+
+    <!-- ==================================================================
+         APARTADO 1: HERO BANNER SUPERIOR ("Sobre mí")
+         Muestra la imagen de fondo (img/hero-sobre-mi-disenadora-web-ilq-digital.jpg)
+         con superposición oscura al 40% y el título H1 centrado en blanco.
+         ================================================================== -->
+    <section class="hero-pagina-interna hero-sobre-mi" aria-label="Cabecera de Sobre mí">
+      <div class="contenedor">
+        <h1>Sobre mí</h1>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         APARTADO 2: SECCIÓN "MI MISIÓN" (2 COLUMNAS + EFECTO GROW)
+         - Columna Izquierda (50%): Título H2 "Mi misión", línea divisora rosa
+           y los 4 párrafos que explican la filosofía de trabajo.
+         - Columna Derecha (50%): Imagen con filtro de color cálido, sombra
+           desplazada (box-shadow) y efecto interactivo Grow (crece al pasar
+           el ratón por encima).
+         ================================================================== -->
+    <section class="seccion-sobre-mi" aria-label="Mi misión profesional">
+      <div class="contenedor">
+        <div class="sobre-mi-fila">
+
+          <!-- Subapartado Izquierdo: Texto de "Mi misión" -->
+          <div class="sobre-mi-texto">
+            <h2>Mi misión</h2>
+            <span class="divisor-rosa" aria-hidden="true"></span>
+            <p>
+              Mi misión es acompañarte en el camino de tener una presencia online que realmente te represente y apoye tu proyecto.
+            </p>
+            <p>
+              Creo que una página web no debe ser solo un escaparate bonito, sino una herramienta que comunique tu esencia, conecte con las personas que quieres atraer y sea fácil de usar y gestionar, incluso si no tienes experiencia técnica.
+            </p>
+            <p>
+              Entiendo que para muchas personas, especialmente emprendedoras y profesionales independientes, la tecnología puede ser una barrera que dificulta dar ese paso digital con confianza. Por eso, diseño webs a tu medida, con un enfoque cercano, sencillo y práctico, donde tú eres la protagonista y puedes tener el control de tu espacio online.
+            </p>
+            <p>
+              Porque para mí, una web es mucho más que líneas de código: es la puerta abierta a nuevas oportunidades, un lugar donde tu trabajo y tu esencia pueden brillar con autenticidad.
+            </p>
+          </div>
+
+          <!-- Subapartado Derecho: Imagen con filtro CSS, sombra y animación Grow -->
+          <div class="sobre-mi-imagen">
+            <img src="img/mision-diseno-web-cercano-emprendedores.webp"
+                 alt="Teclado de trabajo representando el diseño web cercano y a medida para emprendedores"
+                 title="Diseño web cercano y práctico en ILQ Digital"
+                 class="imagen-estilo-mision efecto-hover-grow"
+                 width="1024" height="1024" loading="lazy">
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====================================================================
+       PIE DE PÁGINA GLOBAL (FOOTER)
+       ==================================================================== -->
+  <footer class="pie-pagina" id="colophon">
+    <div class="contenedor">
+      <div class="pie-fila-principal">
+
+        <div class="pie-columna-izquierda">
+          <ul class="pie-lista-enlaces">
+            <li><a href="aviso-legal.html">AVISO LEGAL</a></li>
+            <li><a href="privacidad.html">PRIVACIDAD</a></li>
+            <li><a href="cookies.html">COOKIES</a></li>
+          </ul>
+        </div>
+
+        <div class="pie-columna-centro">
+          <a href="index.html" aria-label="ILQ Digital">
+            <img src="img/logo-completo-ilq-digital-wordpress.png"
+                 alt="Logotipo completo de ILQ Digital Diseño y Desarrollo Web"
+                 title="ILQ Digital"
+                 width="150" height="150" loading="lazy">
+          </a>
+        </div>
+
+        <div class="pie-columna-derecha">
+          <ul class="pie-lista-enlaces">
+            <li><a href="index.html">INICIO</a></li>
+            <li><a href="sobre-mi.html">SOBRE MI</a></li>
+            <li><a href="servicios.html">SERVICIOS</a></li>
+            <li><a href="portafolios.html">PORTAFOLIOS</a></li>
+            <li><a href="contacto.html">CONTACTO</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="pie-copyright">
+        <p>Copyright &copy; ILQ Digital | Developed by <a href="index.html">ILQ Digital</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ====================================================================
+       BANNER DE AVISO DE COOKIES
+       ==================================================================== -->
+  <aside class="aviso-cookies" id="aviso-cookies" aria-label="Aviso de uso de cookies">
+    <p>Utilizamos cookies para asegurar que damos la mejor experiencia al usuario en nuestra web. Si sigues utilizando este sitio asumiremos que estás de acuerdo.</p>
+    <div class="aviso-cookies-botones">
+      <button type="button" class="boton-cookie" id="boton-aceptar-cookies">Aceptar</button>
+      <a href="cookies.html" class="boton-cookie boton-cookie--secundario">Política de cookies</a>
+    </div>
+  </aside>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
+
