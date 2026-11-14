@@ -15,14 +15,14 @@
 
 
   <url>
-    <loc>https://ilqdigital.es/servicios.html</loc>
+    <loc>https://ilqdigital.es/servicios</loc>
     
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://ilqdigital.es/formacion.html</loc>
+    <loc>https://ilqdigital.es/formacion</loc>
     
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -30,7 +30,7 @@
 
 
   <url>
-    <loc>https://ilqdigital.es/portafolios.html</loc>
+    <loc>https://ilqdigital.es/portafolios</loc>
     
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -38,7 +38,7 @@
 
 
   <url>
-    <loc>https://ilqdigital.es/sobre-mi.html</loc>
+    <loc>https://ilqdigital.es/sobre-mi.</loc>
     
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -46,7 +46,7 @@
 
 
   <url>
-    <loc>https://ilqdigital.es/contacto.html</loc>
+    <loc>https://ilqdigital.es/contacto</loc>
     
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
