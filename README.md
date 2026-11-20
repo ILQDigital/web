@@ -10,14 +10,12 @@ Web personal de diseño web, mantenimiento y formación en WordPress para empren
 - **Portafolios**: apps hechas con IA, webs agrícolas, tienda online ecológica, aula virtual de terapias y blogs
 - **Sobre mí**: mi misión y cómo trabajo
 - **Contacto**: por WhatsApp o correo electrónico
-- Páginas legales: aviso legal, privacidad y cookies
 
 ## Cómo está hecha
 
 - HTML, CSS y JavaScript puro, sin WordPress ni base de datos (web estática)
 - Responsive, con menú móvil tipo hamburguesa
 - Slider de inicio con autoplay y animaciones al hacer scroll
-- Banner de cookies (se guarda con `localStorage`)
 - SEO básico: títulos y descripciones por página, `sitemap.xml` e imágenes con nombres descriptivos
 - Alojada en GitHub Pages
 
@@ -25,12 +23,7 @@ Web personal de diseño web, mantenimiento y formación en WordPress para empren
 
 ```
 ├── index.html
-├── servicios.html
-├── formacion.html
-├── portafolios.html
-├── sobre-mi.html
-├── contacto.html
-├── aviso-legal.html / privacidad.html / cookies.html
+├── legal.html
 ├── sitemap.xml
 ├── css/styles.css
 ├── js/main.js      (comentado por apartados)

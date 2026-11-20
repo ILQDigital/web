@@ -1,14 +1,14 @@
 /**
  * ==========================================================================
- * ARCHIVO JAVASCRIPT PRINCIPAL
+ * ARCHIVO JAVASCRIPT PRINCIPAL (VERSIÓN ONE-PAGE UNIFICADA)
  * ==========================================================================
  * Este script controla toda la interactividad de la web y está dividido en
- * 4 apartados independientes y comentados para facilitar su estudio:
+ * 4 apartados independientes y comentados en castellano:
  *
- * APARTADO 1: Menú de navegación móvil (abrir/cerrar con el botón hamburguesa)
- * APARTADO 2: Carrusel / Slider principal de Inicio (efecto Dragon con autoplay 7s)
- * APARTADO 3: Animaciones de entrada al hacer scroll (IntersectionObserver)
- * APARTADO 4: Banner de aviso de cookies (persistencia con localStorage)
+ * APARTADO 1: Menú de navegación móvil (abrir/cerrar y cierre automático al pulsar un enlace)
+ * APARTADO 2: Resaltado automático del apartado activo en el menú al hacer scroll (ScrollSpy) y URL limpia
+ * APARTADO 3: Carrusel / Slider principal de Inicio (efecto Dragon con autoplay 7s)
+ * APARTADO 4: Animaciones suaves y unificadas al hacer scroll (IntersectionObserver)
  * ==========================================================================
  */
 
@@ -16,7 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ========================================================================
      APARTADO 1: MENÚ DE NAVEGACIÓN MÓVIL (RESPONSIVE)
      Permite mostrar u ocultar el menú principal cuando se pulsa el icono de
-     hamburguesa en pantallas pequeñas (móviles y tablets).
+     hamburguesa en pantallas pequeñas, y lo cierra automáticamente cuando
+     el usuario selecciona cualquier apartado de la página única.
      ======================================================================== */
   const botonMenuMovil = document.getElementById("boton-menu-movil");
   const contenedorNavegacion = document.getElementById("cabecera-navegacion");
@@ -24,24 +25,103 @@ document.addEventListener("DOMContentLoaded", () => {
   if (botonMenuMovil && contenedorNavegacion) {
     botonMenuMovil.addEventListener("click", () => {
       const estaAbierto = contenedorNavegacion.classList.toggle("abierto");
-      botonMenuMovil.setAttribute(
-        "aria-expanded",
-        estaAbierto ? "true" : "false",
-      );
+      botonMenuMovil.setAttribute("aria-expanded", estaAbierto ? "true" : "false");
+    });
+
+    // Cerrar el menú móvil al hacer clic en cualquier enlace de navegación interna
+    const enlacesMenu = contenedorNavegacion.querySelectorAll("a");
+    enlacesMenu.forEach((enlace) => {
+      enlace.addEventListener("click", () => {
+        if (contenedorNavegacion.classList.contains("abierto")) {
+          contenedorNavegacion.classList.remove("abierto");
+          botonMenuMovil.setAttribute("aria-expanded", "false");
+        }
+      });
     });
   }
 
   /* ========================================================================
-     APARTADO 2: CARRUSEL / SLIDER HERO DE LA PÁGINA DE INICIO
+     APARTADO 2: INDICADOR ACTIVO EN EL MENÚ AL HACER SCROLL (SCROLLSPY)
+     Detecta qué apartado de la página única (#inicio, #sobre-mi, #servicios,
+     #formacion, #portafolios) está visible en pantalla y marca su enlace
+     correspondiente en la cabecera con la clase '.activo'.
+     ======================================================================== */
+  const seccionesNavegables = document.querySelectorAll("main > section[id]");
+  const enlacesCabecera = document.querySelectorAll(".menu-lista a[href^='#']");
+
+  if (seccionesNavegables.length > 0 && enlacesCabecera.length > 0) {
+    const actualizarMenuActivo = () => {
+      const posicionScroll = window.scrollY + 180;
+
+      seccionesNavegables.forEach((seccion) => {
+        const topeSeccion = seccion.offsetTop;
+        const altoSeccion = seccion.offsetHeight;
+        const idSeccion = seccion.getAttribute("id");
+
+        if (posicionScroll >= topeSeccion && posicionScroll < topeSeccion + altoSeccion) {
+          enlacesCabecera.forEach((enlace) => {
+            const esActivo = enlace.getAttribute("href") === `#${idSeccion}`;
+            enlace.classList.toggle("activo", esActivo);
+            if (esActivo) {
+              enlace.setAttribute("aria-current", "page");
+            } else {
+              enlace.removeAttribute("aria-current");
+            }
+          });
+        }
+      });
+    };
+
+    window.addEventListener("scroll", actualizarMenuActivo, { passive: true });
+  }
+
+  /* ========================================================================
+     APARTADO 2.1: NAVEGACIÓN INTERNA CON URL LIMPIA (SIN # EN LA BARRA DE DIRECCIONES)
+     Intercepta los clics en enlaces internos (#inicio, #sobre-mi, #servicios, etc.)
+     para desplazarse suavemente al apartado sin añadir la almohadilla (#...) a la URL,
+     y limpia también el hash si se llega desde una página legal externa.
+     ======================================================================== */
+  const enlacesAnclaInternos = document.querySelectorAll('a[href^="#"]');
+
+  enlacesAnclaInternos.forEach((enlace) => {
+    enlace.addEventListener("click", (evento) => {
+      const idDestino = enlace.getAttribute("href");
+      if (!idDestino || idDestino === "#") return;
+
+      const elementoDestino = document.querySelector(idDestino);
+      if (elementoDestino) {
+        evento.preventDefault(); // Evita que el navegador escriba #apartado en la URL
+        elementoDestino.scrollIntoView({ behavior: "smooth", block: "start" });
+
+        // Si había algún # en la URL previamente, lo limpia sin recargar la página
+        if (window.location.hash) {
+          history.replaceState(null, "", window.location.pathname + window.location.search);
+        }
+      }
+    });
+  });
+
+  // Si se entra a index.html#apartado desde Aviso Legal / Privacidad / Cookies,
+  // desplaza al apartado y limpia inmediatamente el # de la barra de direcciones
+  if (window.location.hash) {
+    const destinoInicial = document.querySelector(window.location.hash);
+    if (destinoInicial) {
+      setTimeout(() => {
+        destinoInicial.scrollIntoView({ behavior: "smooth", block: "start" });
+        history.replaceState(null, "", window.location.pathname + window.location.search);
+      }, 50);
+    }
+  }
+
+  /* ========================================================================
+     APARTADO 3: CARRUSEL / SLIDER HERO DE LA PÁGINA DE INICIO
      Replica el comportamiento del Prime Slider Dragon de ilqdigital.es:
      - 3 diapositivas con transición suave (fade)
      - Cambio automático cada 7 segundos (7000 ms)
      - Botones laterales numerados (01, 02, 03) para cambiar manualmente
      ======================================================================== */
   const diapositivas = document.querySelectorAll(".slider-diapositiva");
-  const botonesPaginacion = document.querySelectorAll(
-    ".slider-paginacion button",
-  );
+  const botonesPaginacion = document.querySelectorAll(".slider-paginacion button");
 
   if (diapositivas.length > 0) {
     let indiceActual = 0;
@@ -59,10 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       botonesPaginacion.forEach((boton, i) => {
         boton.classList.toggle("activo", i === nuevoIndice);
-        boton.setAttribute(
-          "aria-current",
-          i === nuevoIndice ? "true" : "false",
-        );
+        boton.setAttribute("aria-current", i === nuevoIndice ? "true" : "false");
       });
 
       indiceActual = nuevoIndice;
@@ -97,10 +174,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ========================================================================
-     APARTADO 3: ANIMACIONES AL HACER SCROLL (IntersectionObserver)
-     Detecta cuándo una sección o tarjeta entra en el área visible de la
-     pantalla y le añade la clase '.visible' para disparar las animaciones
-     (swing en Inicio, slideInLeft / slideInRight en Servicios).
+     APARTADO 4: ANIMACIONES SUAVES UNIFICADAS AL HACER SCROLL
+     Detecta cuándo un bloque entra en el área visible de la pantalla y le
+     añade la clase '.visible' para disparar la transición suave (fade-up).
      ======================================================================== */
   const elementosAnimados = document.querySelectorAll(".animar-al-scroll");
 
@@ -110,12 +186,13 @@ document.addEventListener("DOMContentLoaded", () => {
         entradas.forEach((entrada) => {
           if (entrada.isIntersecting) {
             entrada.target.classList.add("visible");
-            observador.unobserve(entrada.target); // Se anima una sola vez
+            observador.unobserve(entrada.target); // Se anima una sola vez de forma limpia
           }
         });
       },
       {
-        threshold: 0.15, // Se activa cuando el 15% del elemento es visible
+        threshold: 0.12, // Se activa cuando el 12% del bloque es visible
+        rootMargin: "0px 0px -40px 0px",
       },
     );
 
@@ -123,27 +200,5 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     // Respaldo si el navegador es antiguo: mostrar todos directamente
     elementosAnimados.forEach((el) => el.classList.add("visible"));
-  }
-
-  /* ========================================================================
-     APARTADO 4: AVISO DE COOKIES INTERACTIVO
-     Muestra el banner inferior de cookies si el usuario aún no ha tomado
-     una decisión, y guarda su respuesta en el navegador (localStorage).
-     ======================================================================== */
-  const bannerCookies = document.getElementById("aviso-cookies");
-  const botonAceptarCookies = document.getElementById("boton-aceptar-cookies");
-
-  if (bannerCookies) {
-    const cookiesAceptadas = localStorage.getItem("ilq_cookies_aceptadas");
-    if (cookiesAceptadas === "si") {
-      bannerCookies.classList.add("oculto");
-    }
-
-    if (botonAceptarCookies) {
-      botonAceptarCookies.addEventListener("click", () => {
-        localStorage.setItem("ilq_cookies_aceptadas", "si");
-        bannerCookies.classList.add("oculto");
-      });
-    }
   }
 });

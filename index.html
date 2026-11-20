@@ -8,22 +8,22 @@
        ==================================================================== -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Inicio - ILQ Digital | Diseño Web en WordPress, SEO y Formación</title>
+    <title>ILQ Digital | Diseño Web en WordPress, SEO, Formación y Portafolio</title>
     <meta
       name="description"
-      content="ILQ Digital: Diseño de páginas web claras y funcionales en WordPress, mantenimiento, optimización SEO básica, seguridad web y formación personalizada."
+      content="ILQ Digital: Diseño de páginas web claras y funcionales en WordPress, mantenimiento, optimización SEO básica, seguridad web, formación personalizada y portafolio de proyectos."
     />
 
     <!-- Icono de pestaña del navegador (Favicon renombrado para SEO) -->
     <link rel="icon" href="img/favicon-ilq-digital.jpg" sizes="32x32" type="image/jpeg" />
 
-    <!-- Tipografías oficiales de Google Fonts usadas en ilqdigital.es: Montserrat (700) y Noto Sans (400, 700) -->
+    <!-- Tipografías oficiales de Google Fonts usadas en ilqdigital.es: Montserrat (600, 700) y Noto Sans (300, 400, 700) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Noto+Sans:wght@300;400;700&display=swap" rel="stylesheet" />
 
     <!-- Link para canonical -->
-    <link rel="canonical" href="https://ilqdigital.es/index" />
+    <link rel="canonical" href="https://ilqdigital.es/" />
 
     <!-- Hoja de estilos global comentada por apartados -->
     <link rel="stylesheet" href="css/styles.css" />
@@ -33,15 +33,16 @@
     <a class="enlace-saltar-contenido" href="#contenido-principal">Ir al contenido</a>
 
     <!-- ====================================================================
-       CABECERA PRINCIPAL DE LA WEB (HEADER)
-       Contiene el logotipo a la izquierda, el menú de navegación con efecto
-       zoom al pasar el ratón y el botón destacado de "Contacto" a la derecha.
+       CABECERA PRINCIPAL DE LA WEB (HEADER - NAVEGACIÓN ONE-PAGE)
+       Contiene el logotipo a la izquierda, el menú de navegación por anclas
+       con indicador activo automático al hacer scroll y el botón destacado
+       de "Contacto" a la derecha.
        ==================================================================== -->
     <header class="cabecera-sitio" id="masthead">
       <div class="cabecera-contenedor">
         <!-- Subapartado: Logotipo de marca -->
         <div class="cabecera-logo">
-          <a href="index.html" aria-label="ILQ Digital - Ir a Inicio">
+          <a href="#inicio" aria-label="ILQ Digital - Ir a Inicio">
             <img
               src="img/logo-icono-ilq-digital-diseno-web.png"
               alt="Logotipo de ILQ Digital Diseño Web y SEO"
@@ -63,28 +64,32 @@
         <div class="cabecera-derecha" id="cabecera-navegacion">
           <nav class="menu-navegacion" aria-label="Navegación principal del sitio">
             <ul class="menu-lista">
-              <li class="menu-item"><a href="index.html" class="activo" aria-current="page">Inicio</a></li>
-              <li class="menu-item"><a href="sobre-mi.html">Sobre mí</a></li>
-              <li class="menu-item"><a href="servicios.html">Servicios</a></li>
-              <li class="menu-item"><a href="portafolios.html">Portafolios</a></li>
+              <li class="menu-item"><a href="#inicio" class="activo" aria-current="page">Inicio</a></li>
+              <li class="menu-item"><a href="#sobre-mi">Sobre mí</a></li>
+              <li class="menu-item"><a href="#servicios">Servicios</a></li>
+              <li class="menu-item"><a href="#formacion">Formación</a></li>
+              <li class="menu-item"><a href="#portafolios">Portafolios</a></li>
             </ul>
           </nav>
-          <a href="contacto.html" class="boton-principal boton-cabecera">Contacto</a>
+          <a href="#contacto" class="boton-principal boton-cabecera">Contacto</a>
         </div>
       </div>
     </header>
 
     <!-- ====================================================================
-       CONTENIDO PRINCIPAL DE LA PÁGINA DE INICIO (MAIN)
+       CONTENIDO PRINCIPAL DE LA WEB UNIFICADA (ONE-PAGE MAIN)
+       Todos los apartados de la web están integrados en esta única página
+       y claramente comentados en castellano bloque por bloque.
        ==================================================================== -->
     <main id="contenido-principal">
       <!-- ==================================================================
-         APARTADO 1: HERO SLIDER PRINCIPAL (Efecto Dragon)
-         Este apartado es la portada interactiva de la web. Consta de 3
-         diapositivas que cambian cada 7 segundos, con fondo desenfocado,
-         máscara curva lateral y botón animado con círculo deslizante.
+         BLOQUE 1: INICIO - HERO SLIDER PRINCIPAL (Efecto Dragon)
+         Este apartado es la portada interactiva de la web. Se respeta
+         íntegramente el slider original de 3 diapositivas que cambian cada
+         7 segundos, con fondo desenfocado, máscara curva lateral y botón
+         animado con círculo deslizante.
          ================================================================== -->
-      <section class="hero-slider" aria-label="Presentación de servicios destacados">
+      <section id="inicio" class="hero-slider" aria-label="Presentación de servicios destacados">
         <ul class="slider-lista">
           <!-- DIAPOSITIVA 1: Mantenimiento y SEO / Diseño Web -->
           <li class="slider-diapositiva activa">
@@ -114,7 +119,7 @@
                     la entienda mejor.
                   </p>
                 </div>
-                <a href="servicios.html" class="boton-dragon-enlace">
+                <a href="#servicios" class="boton-dragon-enlace">
                   <div class="boton-dragon">
                     <span class="boton-dragon-texto">Más información</span>
                     <div class="boton-dragon-figuras">
@@ -153,9 +158,9 @@
                     recomendaciones prácticas para proteger tu web desde el principio.
                   </p>
                 </div>
-                <a href="contacto.html" class="boton-dragon-enlace">
+                <a href="#contacto" class="boton-dragon-enlace">
                   <div class="boton-dragon">
-                    <span class="boton-dragon-texto">Mas información</span>
+                    <span class="boton-dragon-texto">Más información</span>
                     <div class="boton-dragon-figuras">
                       <div class="boton-dragon-flecha"></div>
                       <div class="boton-dragon-circulo-borde"></div>
@@ -189,7 +194,7 @@
                 <div class="slider-descripcion">
                   <p>Si quieres encargarte tú del mantenimiento de tu página, te acompaño paso a paso para que entiendas qué haces y por qué.</p>
                 </div>
-                <a href="contacto.html" class="boton-dragon-enlace">
+                <a href="#formacion" class="boton-dragon-enlace">
                   <div class="boton-dragon">
                     <span class="boton-dragon-texto">Más información</span>
                     <div class="boton-dragon-figuras">
@@ -222,11 +227,12 @@
       </section>
 
       <!-- ==================================================================
-         APARTADO 2: SECCIÓN DE CITA / TESTIMONIO
+         BLOQUE 2: SECCIÓN DE CITA / TESTIMONIO DESTACADO
          Franja con fondo gris suave (#f5f5f5) que destaca una reflexión
-         sobre la importancia de Internet como medio de comunicación.
+         de Manuel Castells sobre la importancia de Internet como medio
+         de comunicación, interacción y organización social.
          ================================================================== -->
-      <section class="seccion-cita" aria-label="Cita destacada">
+      <section class="seccion-cita animar-al-scroll" aria-label="Cita destacada">
         <div class="contenedor">
           <div class="cita-fila">
             <div class="cita-columna-icono">
@@ -247,20 +253,69 @@
       </section>
 
       <!-- ==================================================================
-         APARTADO 3: SECCIÓN DISEÑO WEB (CON EFECTO PARALLAX Y ANIMACIÓN SWING)
-         Esta sección utiliza una imagen de fondo fija (background-attachment: fixed)
-         con una capa oscura superpuesta para que el texto blanco de la mitad
-         derecha resalte mientras el usuario hace scroll.
+         BLOQUE 3: APARTADO "SOBRE MÍ" Y "MI MISIÓN"
+         Unifica la página sobre-mi.html sin banner intermedio para mantener
+         la continuidad visual. Muestra el bloque a 2 columnas donde se explica
+         la filosofía de trabajo cercano y práctico para emprendedores,
+         acompañado de su imagen de contenido con transición suave unificada.
          ================================================================== -->
-      <section class="seccion-parallax-diseno animar-al-scroll animacion-swing" aria-label="Información sobre Diseño Web">
+      <section id="sobre-mi" class="apartado-onepage" aria-label="Sobre mí y mi misión profesional">
+        <!-- Contenido de "Mi misión" en 2 columnas -->
+        <div class="seccion-sobre-mi">
+          <div class="contenedor">
+            <div class="sobre-mi-fila animar-al-scroll">
+              <!-- Columna Izquierda: Texto explicativo de "Sobre mí / Mi misión" -->
+              <div class="sobre-mi-texto">
+                <span class="etiqueta-seccion">Sobre mí</span>
+                <h2>Mi misión</h2>
+                <span class="divisor-rosa" aria-hidden="true"></span>
+                <p>Mi misión es acompañarte en el camino de tener una presencia online que realmente te represente y apoye tu proyecto.</p>
+                <p>
+                  Creo que una página web no debe ser solo un escaparate bonito, sino una herramienta que comunique tu esencia, conecte con las
+                  personas que quieres atraer y sea fácil de usar y gestionar, incluso si no tienes experiencia técnica.
+                </p>
+                <p>
+                  Entiendo que para muchas personas, especialmente emprendedoras y profesionales independientes, la tecnología puede ser una barrera
+                  que dificulta dar ese paso digital con confianza. Por eso, diseño webs a tu medida, con un enfoque cercano, sencillo y práctico,
+                  donde tú eres la protagonista y puedes tener el control de tu espacio online.
+                </p>
+                <p>
+                  Porque para mí, una web es mucho más que líneas de código: es la puerta abierta a nuevas oportunidades, un lugar donde tu trabajo y
+                  tu esencia pueden brillar con autenticidad.
+                </p>
+              </div>
+
+              <!-- Columna Derecha: Imagen con filtro cálido y animación suave unificada -->
+              <div class="sobre-mi-imagen">
+                <img
+                  src="img/mision-diseno-web-cercano-emprendedores.webp"
+                  alt="Teclado de trabajo representando el diseño web cercano y a medida para emprendedores"
+                  title="Diseño web cercano y práctico en ILQ Digital"
+                  class="imagen-estilo-mision efecto-hover-suave"
+                  width="1024"
+                  height="1024"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+         BLOQUE 4: SECCIÓN DESTACADA DE DISEÑO WEB (EFECTO PARALLAX)
+         Conserva la sección Parallax de la portada original con imagen de
+         fondo fija, capa oscura superpuesta y texto en la mitad derecha.
+         ================================================================== -->
+      <section class="seccion-parallax-diseno animar-al-scroll" aria-label="Información destacada sobre Diseño Web">
         <div class="contenedor">
           <div class="parallax-contenido-derecha">
             <h2>Diseño Web</h2>
             <span class="divisor-rosa" aria-hidden="true"></span>
             <p>Diseño de webs en WordPress, pensadas para ser claras, funcionales y fáciles de gestionar.</p>
             <p>Webs adaptadas a móviles y ordenadores, con una estructura sencilla y un diseño limpio.</p>
-            <a href="servicios.html" class="boton-principal">
-              <span>Más información</span>
+            <a href="#servicios" class="boton-principal">
+              <span>Ver todos los servicios</span>
               <svg viewBox="0 0 448 512" aria-hidden="true">
                 <path
                   d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
@@ -272,103 +327,503 @@
       </section>
 
       <!-- ==================================================================
-         APARTADO 4: SECCIÓN DE FORMACIÓN (DISEÑO DE 2 COLUMNAS)
-         Muestra a la izquierda una imagen representativa de formación online
-         y a la derecha la explicación del servicio con enlace a formacion.html.
+         BLOQUE 5: APARTADO DE "SERVICIOS" (INTRODUCCIÓN, CUADRÍCULA Y GALERÍA)
+         Unifica la página servicios.html junto con la galería visual de
+         servicios de la página de inicio, sin banner intermedio:
+         - Subbloque 5.1: Introducción "¿Qué puedo hacer por ti?" con citas.
+         - Subbloque 5.2: Cuadrícula 2x2 con el detalle de cada servicio.
+         - Subbloque 5.3: Resumen visual y galería con filtros CSS originales.
          ================================================================== -->
-      <section class="seccion-inicio-formacion animar-al-scroll animacion-swing" aria-label="Resumen de Formación en WordPress">
-        <div class="contenedor">
-          <div class="fila-dos-columnas">
-            <!-- Columna izquierda: Imagen SEO optimizada -->
-            <div class="columna-mitad">
-              <img
-                src="img/formacion-personalizada-wordpress-gestion-web.jpg"
-                alt="Formación personalizada en WordPress para aprender a gestionar tu propia página web"
-                title="Formación práctica en WordPress"
-                width="1280"
-                height="853"
-                loading="lazy"
-              />
-            </div>
-            <!-- Columna derecha: Texto y botón -->
-            <div class="columna-mitad">
-              <h2>Formación</h2>
+      <section id="servicios" class="apartado-onepage" aria-label="Servicios de diseño web, redes, SEO y formación">
+        <!-- Subbloque 5.1: Introducción "¿Qué puedo hacer por tí?" -->
+        <div class="seccion-servicios-intro animar-al-scroll">
+          <div class="servicios-intro-contenedor">
+            <span class="etiqueta-seccion">Servicios</span>
+            <h2>¿Qué puedo hacer por tí?</h2>
+            <span class="divisor-rosa divisor-rosa--centrado" aria-hidden="true"></span>
+
+            <blockquote class="cita-servicio">
               <p>
-                ¿Quieres encargarte del mantenimiento de tu web? Te ofrezco una formación esencial para que puedas gestionarla por tu cuenta, sin
-                depender siempre de terceros. ¿Hablamos?
+                <strong>Diseño páginas web claras y funcionales</strong>
+                <br />
+                Trabajo en webs sencillas, bien estructuradas y adaptadas a lo que realmente necesitas. La idea es que tengas una web que te
+                represente, sea fácil de usar y no se convierta en una carga.
               </p>
-              <a href="formacion.html" class="boton-principal">Más información</a>
+            </blockquote>
+
+            <blockquote class="cita-servicio">
+              <p>
+                Utilizo WordPress, una herramienta flexible y bastante accesible, que permite crear una web correcta sin complicaciones innecesarias.
+                Me centro en soluciones prácticas y en entender bien cada proyecto antes de tocar nada.
+              </p>
+            </blockquote>
+
+            <blockquote class="cita-servicio">
+              <p>
+                Puedo ayudarte desde el diseño inicial hasta explicarte cómo mantener tu web por tu cuenta, revisando también aspectos básicos de
+                seguridad e integrando tus redes sociales si lo necesitas. Siempre con un trato cercano y explicando las cosas de forma clara.
+              </p>
+            </blockquote>
+          </div>
+        </div>
+
+        <!-- Subbloque 5.3: Cuadrícula 2x2 de servicios detallados -->
+        <div class="seccion-servicios-cuadricula">
+          <div class="contenedor">
+            <!-- Fila Superior: Diseño Web + Integración en redes -->
+            <div class="servicios-fila">
+              <!-- Tarjeta 1: Diseño Web -->
+              <article class="tarjeta-servicio animar-al-scroll">
+                <div class="tarjeta-servicio-imagen-envoltorio">
+                  <img
+                    src="img/servicio-diseno-web-wordpress-responsive.jpg"
+                    alt="Servicio de diseño web personalizado en WordPress adaptable a móvil, tablet y ordenador"
+                    title="Diseño Web en WordPress"
+                    class="imagen-estilo-servicio efecto-hover-suave"
+                    width="1024"
+                    height="683"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="tarjeta-servicio-contenido">
+                  <h5>Diseño Web</h5>
+                  <ul class="lista-check-servicios">
+                    <li>✅ Diseño personalizado en WordPress.</li>
+                    <li>✅ Web adaptada a móvil, tablet y ordenador.</li>
+                    <li>✅ Estructura clara y navegación sencilla.</li>
+                    <li>✅ Ajustes básicos de velocidad y rendimiento.</li>
+                  </ul>
+                </div>
+              </article>
+
+              <!-- Tarjeta 2: Integración en redes -->
+              <article class="tarjeta-servicio animar-al-scroll">
+                <div class="tarjeta-servicio-imagen-envoltorio">
+                  <img
+                    src="img/servicio-integracion-redes-sociales-web.jpg"
+                    alt="Integración de redes sociales, botones para compartir y contacto por WhatsApp en tu web"
+                    title="Integración en redes sociales"
+                    class="imagen-estilo-servicio efecto-hover-suave"
+                    width="1024"
+                    height="743"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="tarjeta-servicio-contenido">
+                  <h5>Integración en redes</h5>
+                  <ul class="lista-check-servicios">
+                    <li>✅ Enlaces visibles a tus redes sociales.</li>
+                    <li>✅ Botones para compartir tus contenidos.</li>
+                    <li>✅ Integración del feed de Instagram (si aplica).</li>
+                    <li>✅ Botón de contacto por WhatsApp.</li>
+                    <li>✅ Preparación básica de las vistas previas al compartir tu web en redes.</li>
+                  </ul>
+                </div>
+              </article>
+            </div>
+
+            <!-- Fila Inferior: Seo y seguridad + Formación básica -->
+            <div class="servicios-fila">
+              <!-- Tarjeta 3: Seo y seguridad -->
+              <article class="tarjeta-servicio animar-al-scroll">
+                <div class="tarjeta-servicio-imagen-envoltorio">
+                  <img
+                    src="img/servicio-optimizacion-seo-seguridad-wordpress.jpg"
+                    alt="Optimización SEO básica e instalación de seguridad esencial en WordPress"
+                    title="SEO y Seguridad Web"
+                    class="imagen-estilo-servicio efecto-hover-suave"
+                    width="1024"
+                    height="683"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="tarjeta-servicio-contenido">
+                  <h5>Seo y seguridad</h5>
+                  <ul class="lista-check-servicios">
+                    <li>✅ Configuración inicial para que tu web sea indexable por Google.</li>
+                    <li>✅ Ajustes básicos de SEO técnico (estructura, títulos y enlaces).</li>
+                    <li>✅ Instalación y configuración de plugins esenciales.</li>
+                    <li>✅ Revisión de aspectos básicos de seguridad en WordPress.</li>
+                  </ul>
+                </div>
+              </article>
+
+              <!-- Tarjeta 4: Formación básica (con enlace directo al bloque #formacion) -->
+              <article class="tarjeta-servicio animar-al-scroll">
+                <div class="tarjeta-servicio-imagen-envoltorio">
+                  <a href="#formacion" aria-label="Ver detalles de Formación básica">
+                    <img
+                      src="img/servicio-formacion-basica-autonomia-wordpress.jpg"
+                      alt="Espacio de trabajo cómodo con portátil para formación básica de autogestión en WordPress"
+                      title="Formación básica personalizada en WordPress"
+                      class="imagen-estilo-servicio efecto-hover-suave"
+                      width="1024"
+                      height="683"
+                      loading="lazy"
+                    />
+                  </a>
+                </div>
+                <div class="tarjeta-servicio-contenido">
+                  <h5><a href="#formacion">Formación básica</a></h5>
+                  <ul class="lista-check-servicios">
+                    <li>
+                      ✅ Si lo deseas, te ofrezco una formación personalizada para que puedas gestionar tu web por tu cuenta, sin depender siempre de
+                      terceros.
+                    </li>
+                    <li>✅ ¿Hablamos?</li>
+                  </ul>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <!-- Subbloque 5.4: Galería visual de Servicios (de la página de inicio original) -->
+        <div class="seccion-inicio-servicios animar-al-scroll">
+          <div class="contenedor">
+            <div class="fila-tres-columnas">
+              <!-- Columna 1 (1/3): Presentación textual de enfoque integral -->
+              <div class="columna-tercio-texto">
+                <h2>Enfoque integral</h2>
+                <span class="divisor-rosa divisor-rosa--15" aria-hidden="true"></span>
+                <p>Diseño web, integración con redes sociales y acompañamiento básico para que tu web esté bien planteada desde el inicio.</p>
+                <a href="#contacto" class="boton-principal">Solicitar información</a>
+              </div>
+
+              <!-- Columna 2 (1/3): Primera pareja de imágenes con filtros CSS -->
+              <div class="columna-tercio-galeria">
+                <div class="galeria-item">
+                  <img
+                    src="img/servicio-diseno-web-wordpress-responsive.jpg"
+                    alt="Servicio de diseño web en WordPress adaptable a ordenadores y móviles"
+                    title="Diseño web responsive en WordPress"
+                    class="filtro-imagen-calido efecto-hover-suave"
+                    width="1024"
+                    height="683"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="galeria-item">
+                  <img
+                    src="img/servicio-integracion-redes-sociales-web.jpg"
+                    alt="Integración de redes sociales y canales de comunicación en tu página web"
+                    title="Integración con redes sociales"
+                    class="filtro-imagen-vibrante efecto-hover-suave"
+                    width="1024"
+                    height="743"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+
+              <!-- Columna 3 (1/3): Segunda pareja de imágenes con filtros CSS -->
+              <div class="columna-tercio-galeria">
+                <div class="galeria-item">
+                  <img
+                    src="img/servicio-optimizacion-seo-seguridad-wordpress.jpg"
+                    alt="Revisión de seguridad web y protección básica para sitios WordPress"
+                    title="Seguridad web y SEO en WordPress"
+                    class="filtro-imagen-calido efecto-hover-suave"
+                    width="1024"
+                    height="683"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="galeria-item">
+                  <img
+                    src="img/estrategia-redes-sociales-presencia-digital.jpg"
+                    alt="Estrategia en redes sociales y presencia digital en dispositivos móviles"
+                    title="Presencia digital y redes sociales"
+                    class="filtro-imagen-vibrante efecto-hover-suave"
+                    width="683"
+                    height="1024"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       <!-- ==================================================================
-         APARTADO 5: SECCIÓN DE SERVICIOS Y GALERÍA CON FILTROS CSS
-         Se divide en 3 columnas:
-         - Columna 1: Título "Servicios", divisor rosa, descripción y botón.
-         - Columna 2: 2 fotografías apiladas (Diseño Web y Redes).
-         - Columna 3: 2 fotografías apiladas (Seguridad Web y Redes Sociales).
-         Las imágenes incluyen los filtros CSS exactos (brightness, contrast,
-         saturate y hue-rotate) de la web original.
+         BLOQUE 6: APARTADO DE "FORMACIÓN" (RESUMEN VISUAL Y PROGRAMA DETALLADO)
+         Unifica la sección de Formación de Inicio (2 columnas con imagen) y
+         el detalle completo de la página formacion.html con los puntos de
+         aprendizaje para autogestionar WordPress, sin banner intermedio.
          ================================================================== -->
-      <section class="seccion-inicio-servicios animar-al-scroll animacion-swing" aria-label="Galería visual de Servicios">
-        <div class="contenedor">
-          <div class="fila-tres-columnas">
-            <!-- Columna 1 (1/3): Presentación textual de Servicios -->
-            <div class="columna-tercio-texto">
-              <h2>Servicios</h2>
+      <section id="formacion" class="apartado-onepage" aria-label="Formación personalizada en WordPress">
+        <!-- Subbloque 6.1: Presentación a 2 columnas (Imagen + Introducción) -->
+        <div class="seccion-inicio-formacion animar-al-scroll">
+          <div class="contenedor">
+            <div class="fila-dos-columnas">
+              <!-- Columna izquierda: Imagen SEO optimizada -->
+              <div class="columna-mitad">
+                <img
+                  src="img/formacion-personalizada-wordpress-gestion-web.jpg"
+                  alt="Formación personalizada en WordPress para aprender a gestionar tu propia página web"
+                  title="Formación práctica en WordPress"
+                  class="efecto-hover-suave"
+                  width="1280"
+                  height="853"
+                  loading="lazy"
+                />
+              </div>
+              <!-- Columna derecha: Introducción a la formación -->
+              <div class="columna-mitad">
+                <span class="etiqueta-seccion">Formación</span>
+                <h2>Formación básica para gestionar tu web</h2>
+                <span class="divisor-rosa" aria-hidden="true"></span>
+                <p>
+                  ¿Quieres encargarte del mantenimiento de tu web? Te ofrezco una formación esencial y personalizada para que puedas gestionarla tú
+                  mismo/a, sin depender siempre de terceros.
+                </p>
+                <p>
+                  Está pensada para que entiendas lo esencial sin necesidad de tener conocimientos técnicos previos, adaptándose por completo a tu
+                  ritmo y nivel.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Subbloque 6.3: Programa detallado de lo que incluye la formación -->
+        <div class="seccion-formacion-detalle animar-al-scroll">
+          <div class="formacion-contenedor">
+            <h3>¿Qué incluye esta formación?</h3>
+
+            <ul class="lista-formacion">
+              <li>Cómo acceder y moverte por el panel de administración de WordPress.</li>
+              <li>Editar textos e imágenes de tu web sin miedo a romper nada.</li>
+              <li>Añadir o eliminar páginas o entradas de blog.</li>
+              <li>Actualizar plugins y temas de forma segura.</li>
+              <li>Hacer copias de seguridad básicas y entender por qué son importantes.</li>
+              <li>Consejos prácticos para mantener tu web al día y evitar problemas comunes.</li>
+            </ul>
+
+            <p>
+              La formación puede realizarse por videollamada o mediante una guía paso a paso con capturas, según lo que mejor se ajuste a ti. Mi
+              objetivo es que tengas el control de tu web y la confianza para mantenerla viva, actualizada y alineada con tu proyecto.
+            </p>
+
+            <div class="formacion-cta">
+              <a href="#contacto" class="boton-principal">¿Hablamos?</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+         BLOQUE 7: APARTADO DE "PORTAFOLIOS" (MIS PROYECTOS POR CATEGORÍAS)
+         Unifica íntegramente el contenido y las imágenes de portafolios.html
+         sin banner intermedio:
+         - Subbloque 7.1: Encabezado e introducción explicativa del portafolio.
+         - Subbloque 7.2: Categoría 1 - Apps realizadas con IA.
+         - Subbloque 7.3: Categoría 2 - Webs agrícolas.
+         - Subbloque 7.4: Categoría 3 - Web terapias.
+         - Subbloque 7.5: Categoría 4 - Otros proyectos.
+         ================================================================== -->
+      <section id="portafolios" class="apartado-onepage seccion-portafolios-bloque" aria-label="Portafolio de proyectos de desarrollo y diseño web">
+        <!-- Subbloque 7.1: Encabezado e introducción al portafolio de proyectos -->
+        <div class="seccion-portafolios-intro animar-al-scroll">
+          <div class="contenedor">
+            <span class="etiqueta-seccion">Portafolios</span>
+            <h2>Mis proyectos</h2>
+            <span class="divisor-rosa divisor-rosa--centrado" aria-hidden="true"></span>
+            <h6>Los proyectos que ves aquí forman parte de mi proceso de aprendizaje y prácticas en desarrollo y diseño web.</h6>
+            <h6>
+              Son proyectos reales que utilizo para experimentar, mejorar y aplicar de forma práctica los conocimientos que voy adquiriendo,
+              trabajando con diferentes herramientas, incluida la inteligencia artificial como apoyo en el desarrollo.
+            </h6>
+            <h6>
+              Mi objetivo es seguir aprendiendo, probar nuevas soluciones y crear proyectos funcionales que me permitan poner en práctica lo
+              aprendido.
+            </h6>
+          </div>
+        </div>
+
+        <!-- Subbloque 7.3: Categoría 1 - Apps realizadas con IA -->
+        <div class="bloque-categoria-portafolio animar-al-scroll">
+          <div class="contenedor">
+            <div class="cabecera-categoria-portafolio">
+              <div class="divisor-con-texto">
+                <h6>Portafolios</h6>
+              </div>
+              <h2>Apps realizadas con IA</h2>
+              <p>Aplicaciones desarrolladas con apoyo de IA.</p>
+            </div>
+
+            <div class="fila-proyectos-portafolio">
+              <div class="item-proyecto-portafolio">
+                <img
+                  src="img/portafolio-app-ia-comparador-meteorologico-meteocompare.jpeg"
+                  alt="Aplicación web MeteoCompare desarrollada con apoyo de Inteligencia Artificial"
+                  title="Proyecto App IA: MeteoCompare"
+                  class="imagen-estilo-portafolio efecto-hover-suave"
+                  width="1024"
+                  height="1024"
+                  loading="lazy"
+                />
+              </div>
+              <div class="item-proyecto-portafolio">
+                <img
+                  src="img/portafolio-app-ia-sistema-gestion-clientes-crm.jpeg"
+                  alt="Sistema CRM de gestión de clientes desarrollado con apoyo de Inteligencia Artificial"
+                  title="Proyecto App IA: Sistema CRM"
+                  class="imagen-estilo-portafolio efecto-hover-suave"
+                  width="1024"
+                  height="1024"
+                  loading="lazy"
+                />
+              </div>
+              <div class="item-proyecto-portafolio">
+                <img
+                  src="img/portafolio-app-ia-aplicacion-control-gastos.jpeg"
+                  alt="Aplicación de control y gestión de gastos desarrollada con Inteligencia Artificial"
+                  title="Proyecto App IA: Gestor de Gastos"
+                  class="imagen-estilo-portafolio efecto-hover-suave"
+                  width="1024"
+                  height="1024"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Subbloque 7.4: Categoría 2 - Webs agrícolas -->
+        <div class="bloque-categoria-portafolio animar-al-scroll">
+          <div class="contenedor">
+            <div class="cabecera-categoria-portafolio">
               <span class="divisor-rosa divisor-rosa--15" aria-hidden="true"></span>
-              <p>Diseño web, integración con redes sociales y acompañamiento básico para que tu web esté bien planteada desde el inicio.</p>
-              <a href="servicios.html" class="boton-principal">Más información</a>
+              <h2>Webs agrícolas</h2>
+              <p>Web de trabajos agrícolas, una tienda online de venta de aceite ecológico y otra de agricultura ecológica.</p>
             </div>
 
-            <!-- Columna 2 (1/3): Primera pareja de imágenes con filtros CSS -->
-            <div class="columna-tercio-galeria">
-              <div class="galeria-item">
+            <div class="fila-proyectos-portafolio">
+              <div class="item-proyecto-portafolio">
                 <img
-                  src="img/servicio-diseno-web-wordpress-responsive.jpg"
-                  alt="Servicio de diseño web en WordPress adaptable a ordenadores y móviles"
-                  title="Diseño web responsive en WordPress"
-                  class="filtro-imagen-calido"
+                  src="img/portafolio-web-servicios-trabajos-agricolas.jpeg"
+                  alt="Diseño de página web para empresa de servicios y trabajos agrícolas con maquinaria"
+                  title="Web de Trabajos Agrícolas"
+                  class="imagen-estilo-portafolio efecto-hover-suave"
                   width="1024"
-                  height="683"
+                  height="1024"
                   loading="lazy"
                 />
               </div>
-              <div class="galeria-item">
+              <div class="item-proyecto-portafolio">
                 <img
-                  src="img/servicio-integracion-redes-sociales-web.jpg"
-                  alt="Integración de redes sociales y canales de comunicación en tu página web"
-                  title="Integración con redes sociales"
-                  class="filtro-imagen-vibrante"
+                  src="img/portafolio-tienda-online-aceite-oliva-ecologico.jpeg"
+                  alt="Tienda online en WordPress para venta de aceite de oliva virgen extra ecológico"
+                  title="Tienda Online de Aceite Ecológico"
+                  class="imagen-estilo-portafolio efecto-hover-suave"
                   width="1024"
-                  height="743"
+                  height="1024"
+                  loading="lazy"
+                />
+              </div>
+              <div class="item-proyecto-portafolio">
+                <img
+                  src="img/portafolio-web-agricultura-huerta-ecologica.jpeg"
+                  alt="Sitio web de agricultura y productos de huerta ecológica"
+                  title="Web de Agricultura y Huerta Ecológica"
+                  class="imagen-estilo-portafolio efecto-hover-suave"
+                  width="1024"
+                  height="1024"
                   loading="lazy"
                 />
               </div>
             </div>
+          </div>
+        </div>
 
-            <!-- Columna 3 (1/3): Segunda pareja de imágenes con filtros CSS -->
-            <div class="columna-tercio-galeria">
-              <div class="galeria-item">
+        <!-- Subbloque 7.5: Categoría 3 - Web terapias -->
+        <div class="bloque-categoria-portafolio animar-al-scroll">
+          <div class="contenedor">
+            <div class="cabecera-categoria-portafolio">
+              <span class="divisor-rosa divisor-rosa--15" aria-hidden="true"></span>
+              <h2>Web terapias</h2>
+              <p>Web de terapias naturales, que consta de un blog, un aula virtual realizada con learnpress y una tienda de afiliación.</p>
+            </div>
+
+            <div class="fila-proyectos-portafolio">
+              <div class="item-proyecto-portafolio">
                 <img
-                  src="img/servicio-optimizacion-seo-seguridad-wordpress.jpg"
-                  alt="Revisión de seguridad web y protección básica para sitios WordPress"
-                  title="Seguridad web y SEO en WordPress"
-                  class="filtro-imagen-calido"
+                  src="img/portafolio-web-terapias-naturales-blog.jpeg"
+                  alt="Página de inicio y blog del sitio web de terapias naturales y bienestar"
+                  title="Inicio y Blog de Terapias Naturales"
+                  class="imagen-estilo-portafolio efecto-hover-suave"
                   width="1024"
-                  height="683"
+                  height="1024"
                   loading="lazy"
                 />
               </div>
-              <div class="galeria-item">
+              <div class="item-proyecto-portafolio">
                 <img
-                  src="img/estrategia-redes-sociales-presencia-digital.jpg"
-                  alt="Estrategia en redes sociales y presencia digital en dispositivos móviles"
-                  title="Presencia digital y redes sociales"
-                  class="filtro-imagen-vibrante"
-                  width="683"
+                  src="img/portafolio-aula-virtual-learnpress-terapias.jpeg"
+                  alt="Aula virtual de formación online creada con LearnPress en WordPress"
+                  title="Aula Virtual con LearnPress"
+                  class="imagen-estilo-portafolio efecto-hover-suave"
+                  width="1024"
+                  height="1024"
+                  loading="lazy"
+                />
+              </div>
+              <div class="item-proyecto-portafolio">
+                <img
+                  src="img/portafolio-tienda-afiliacion-productos-naturales.jpeg"
+                  alt="Tienda online de afiliación de productos naturales integrada en WordPress"
+                  title="Tienda de Afiliación"
+                  class="imagen-estilo-portafolio efecto-hover-suave"
+                  width="1024"
+                  height="1024"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Subbloque 7.6: Categoría 4 - Otros proyectos -->
+        <div class="bloque-categoria-portafolio animar-al-scroll">
+          <div class="contenedor">
+            <div class="cabecera-categoria-portafolio">
+              <span class="divisor-rosa divisor-rosa--15" aria-hidden="true"></span>
+              <h2>Otros proyectos</h2>
+              <p>Blogs realizados en otras plataformas y los inicios de ILQ Digital.</p>
+            </div>
+
+            <div class="fila-proyectos-portafolio">
+              <div class="item-proyecto-portafolio">
+                <img
+                  src="img/portafolio-diseno-blog-personal-contenidos.jpeg"
+                  alt="Diseño de blog de contenidos realizado en etapas iniciales"
+                  title="Blog en otras plataformas"
+                  class="imagen-estilo-portafolio efecto-hover-suave"
+                  width="1024"
+                  height="1024"
+                  loading="lazy"
+                />
+              </div>
+              <div class="item-proyecto-portafolio">
+                <img
+                  src="img/portafolio-web-corporativa-inicios-ilq-digital.jpeg"
+                  alt="Primera versión del portafolio y web corporativa de ILQ Digital"
+                  title="Inicios de ILQ Digital"
+                  class="imagen-estilo-portafolio efecto-hover-suave"
+                  width="1024"
+                  height="1024"
+                  loading="lazy"
+                />
+              </div>
+              <div class="item-proyecto-portafolio">
+                <img
+                  src="img/portafolio-web-cuidado-bienestar-mascotas.jpeg"
+                  alt="Diseño de página web dedicada al cuidado y bienestar de mascotas"
+                  title="Proyecto Web de Mascotas"
+                  class="imagen-estilo-portafolio efecto-hover-suave"
+                  width="1024"
                   height="1024"
                   loading="lazy"
                 />
@@ -377,76 +832,160 @@
           </div>
         </div>
       </section>
+
+      <!-- ==================================================================
+         BLOQUE 8: APARTADO DE "CONTACTO" (UBICACIÓN Y TARJETA DIGITAL)
+         Unifica la página contacto.html sin banner intermedio:
+         - Mapa interactivo de Google Maps (Anna) a la izquierda
+         - Tarjeta de identidad digital "Link in Bio" con foto de perfil,
+           WhatsApp, correo electrónico y GitHub a la derecha.
+         ================================================================== -->
+      <section id="contacto" class="apartado-onepage" aria-label="Información de ubicación y canales de contacto">
+        <!-- Mapa y Tarjeta Link in Bio -->
+        <div class="seccion-contacto animar-al-scroll">
+          <div class="contenedor">
+            <div class="contacto-encabezado">
+              <span class="etiqueta-seccion">Contacto</span>
+              <h2>Estamos listos, hablemos</h2>
+              <span class="divisor-rosa" aria-hidden="true"></span>
+            </div>
+
+            <div class="contacto-fila">
+              <!-- Columna Izquierda: Mapa interactivo de Google Maps -->
+              <div class="contacto-columna-mapa">
+                <iframe
+                  loading="lazy"
+                  src="https://maps.google.com/maps?q=Anna&amp;t=m&amp;z=14&amp;output=embed&amp;iwloc=near"
+                  title="Ubicación en Anna (Valencia)"
+                  aria-label="Mapa de ubicación en Anna"
+                ></iframe>
+              </div>
+
+              <!-- Columna Derecha: Tarjeta de identidad digital (Link in Bio) -->
+              <div class="contacto-columna-tarjeta">
+                <div class="tarjeta-bio">
+                  <!-- Imagen de perfil circular -->
+                  <div class="tarjeta-bio-foto">
+                    <img
+                      src="img/perfil-inma-ilq-digital-desarrolladora-web.jpg"
+                      alt="Inma - Desarrolladora y diseñadora web en ILQ Digital"
+                      title="ILQ Digital"
+                      width="220"
+                      height="300"
+                      loading="lazy"
+                    />
+                  </div>
+
+                  <!-- Nombre y descripción de marca -->
+                  <h2>ILQ DIGITAL</h2>
+                  <p>Impulsamos tu presencia online con estrategias digitales que convierten ideas en resultados.</p>
+
+                  <!-- Iconos de contacto directo: WhatsApp y Email -->
+                  <div class="tarjeta-bio-iconos">
+                    <a
+                      href="https://wa.me/34621293295"
+                      target="_blank"
+                      rel="noopener"
+                      aria-label="Contactar por WhatsApp"
+                      title="WhatsApp: +34 621 293 295"
+                    >
+                      <svg viewBox="0 0 448 512" aria-hidden="true">
+                        <path
+                          d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"
+                        ></path>
+                      </svg>
+                    </a>
+                    <a
+                      href="mailto:contacto@ilqdigital.es"
+                      aria-label="Enviar correo electrónico a contacto@ilqdigital.es"
+                      title="Email: contacto@ilqdigital.es"
+                    >
+                      <svg viewBox="0 0 512 512" aria-hidden="true">
+                        <path
+                          d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
+                        ></path>
+                      </svg>
+                    </a>
+                  </div>
+
+                  <!-- Botón principal hacia GitHub -->
+                  <a href="https://github.com/ILQDigital" target="_blank" rel="noopener" class="boton-bio-github">GitHub</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- ====================================================================
-       PIE DE PÁGINA GLOBAL (FOOTER)
-       Presenta fondo oscuro (#191919) dividido en 3 bloques superiores
-       (Enlaces Legales, Logotipo Completo de ILQ Digital, Enlaces de Navegación)
-       y una línea inferior con los derechos de autor (Copyright).
+       BLOQUE 9: PIE DE PÁGINA GLOBAL REDISEÑADO (FOOTER)
+       Estructura equilibrada en 3 columnas sobre fondo oscuro (#191919):
+       1. Identidad de marca con el logotipo completo de ILQ Digital.
+       2. Navegación rápida por los apartados de la página.
+       3. Contacto y Legalidad (enlaces directos sin mostrar datos y enlace único legal).
        ==================================================================== -->
     <footer class="pie-pagina" id="colophon">
       <div class="contenedor">
-        <div class="pie-fila-principal">
-          <!-- Columna Izquierda: Páginas Legales -->
-          <div class="pie-columna-izquierda">
-            <ul class="pie-lista-enlaces">
-              <li><a href="aviso-legal.html">AVISO LEGAL</a></li>
-              <li><a href="privacidad.html">PRIVACIDAD</a></li>
-              <li><a href="cookies.html">COOKIES</a></li>
-            </ul>
-          </div>
-
-          <!-- Columna Central: Logotipo completo de ILQ Digital -->
-          <div class="pie-columna-centro">
-            <a href="index.html" aria-label="ILQ Digital">
+        <!-- Parte superior del pie de página: Cuadrícula de 3 columnas -->
+        <div class="pie-grid-principal">
+          <!-- Columna 1: Identidad visual y logotipo oficial -->
+          <div class="pie-bloque-marca">
+            <a href="#inicio" class="pie-logo-principal" aria-label="ILQ Digital - Volver arriba">
               <img
                 src="img/logo-completo-ilq-digital-wordpress.png"
                 alt="Logotipo completo de ILQ Digital Diseño y Desarrollo Web"
                 title="ILQ Digital"
-                width="150"
-                height="150"
+                width="140"
+                height="140"
                 loading="lazy"
               />
             </a>
+            <div class="pie-marca-resumen">
+              <div class="pie-marca-cabecera">
+                <span>Diseño Web &amp; Formación</span>
+              </div>
+              <p>Diseño de páginas web claras, funcionales y fáciles de gestionar en WordPress para emprendedores y profesionales.</p>
+            </div>
           </div>
 
-          <!-- Columna Derecha: Mapa de navegación del sitio -->
-          <div class="pie-columna-derecha">
+          <!-- Columna 2: Mapa de navegación por apartados (One-Page) -->
+          <div class="pie-bloque-enlaces">
+            <h4 class="pie-titulo-columna">Apartados</h4>
             <ul class="pie-lista-enlaces">
-              <li><a href="index.html">INICIO</a></li>
-              <li><a href="sobre-mi.html">SOBRE MI</a></li>
-              <li><a href="servicios.html">SERVICIOS</a></li>
-              <li><a href="portafolios.html">PORTAFOLIOS</a></li>
-              <li><a href="contacto.html">CONTACTO</a></li>
+              <li><a href="#inicio">Inicio</a></li>
+              <li><a href="#servicios">Servicios</a></li>
+              <li><a href="#portafolios">Portafolios</a></li>
             </ul>
+          </div>
+
+          <!-- Columna 3: Contacto y Legalidad -->
+          <div class="pie-bloque-contacto">
+            <h4 class="pie-titulo-columna">Contacto y Legalidad</h4>
+            <ul class="pie-lista-enlaces">
+              <li><a href="mailto:contacto@ilqdigital.es">Correo electrónico</a></li>
+              <li><a href="https://wa.me/34621293295" target="_blank" rel="noopener">WhatsApp</a></li>
+              <li><a href="legal.html">Aviso Legal y Privacidad</a></li>
+            </ul>
+            <!--
+            <div class="pie-redes-lista">
+              <a href="https://www.linkedin.com/in/inmalq/" target="_blank" rel="noopener">LinkedIn</a>
+              <a href="https://www.behance.net/ilqdigital#" target="_blank" rel="noopener">Behance</a>
+              <a href="https://github.com/ILQDigital" target="_blank" rel="noopener">GitHub</a>
+            </div> -->
           </div>
         </div>
 
-        <!-- Subapartado: Copyright -->
-        <div class="pie-copyright">
+        <!-- Barra inferior del pie de página: Copyright y botón volver arriba -->
+        <div class="pie-barra-inferior">
           <p>
-            Copyright &copy; ILQ Digital | Developed by
-            <a href="index.html">ILQ Digital</a>
+            2026 &copy; ILQ Digital | Developed by
+            <a href="#inicio">ILQ Digital</a>
           </p>
+          <a href="#inicio" class="pie-volver-arriba" aria-label="Volver al inicio de la página">Volver arriba &uarr;</a>
         </div>
       </div>
     </footer>
-
-    <!-- ====================================================================
-       BANNER DE AVISO DE COOKIES
-       Aparece en la parte inferior y se oculta al pulsar "Aceptar".
-       ==================================================================== -->
-    <aside class="aviso-cookies" id="aviso-cookies" aria-label="Aviso de uso de cookies">
-      <p>
-        Utilizamos cookies para asegurar que damos la mejor experiencia al usuario en nuestra web. Si sigues utilizando este sitio asumiremos que
-        estás de acuerdo.
-      </p>
-      <div class="aviso-cookies-botones">
-        <button type="button" class="boton-cookie" id="boton-aceptar-cookies">Aceptar</button>
-        <a href="cookies.html" class="boton-cookie boton-cookie--secundario">Política de cookies</a>
-      </div>
-    </aside>
 
     <!-- Archivo JavaScript principal -->
     <script src="js/main.js"></script>

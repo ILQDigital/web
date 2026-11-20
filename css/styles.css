@@ -1,28 +1,24 @@
 /* ==========================================================================
-   HOJA DE ESTILOS PRINCIPAL
+   HOJA DE ESTILOS PRINCIPAL (VERSIÓN ONE-PAGE UNIFICADA)
    ==========================================================================
    
    ÍNDICE DE APARTADOS:
    1. VARIABLES GLOBALES (:root) - Colores y tipografías del tema Astra/Elementor
    2. RESET Y ESTILOS BASE - Configuración general del documento y textos
    3. COMPONENTES REUTILIZABLES - Contenedores, botones, divisores decorativos
-   4. CABECERA (HEADER) Y NAVEGACIÓN - Logo, menú escritorio con zoom y menú móvil
-   5. PÁGINA DE INICIO: HERO SLIDER (Efecto Dragon) - Diapositivas, máscara curva y botón animado
-   6. PÁGINA DE INICIO: SECCIÓN CITA / TESTIMONIO - Bloque gris claro con comillas
-   7. PÁGINA DE INICIO: SECCIÓN DISEÑO WEB (Efecto Parallax) - Imagen fija de fondo
-   8. PÁGINA DE INICIO: SECCIÓN FORMACIÓN - Diseño a 2 columnas (imagen + texto)
-   9. PÁGINA DE INICIO: SECCIÓN SERVICIOS Y GALERÍA - Filtros CSS en imágenes
-   10. CABECERAS DE PÁGINAS INTERNAS (HERO SECUNDARIO) - Banner superior con superposición oscura
-   11. PÁGINA SOBRE MÍ - Sección "Mi misión" e imagen con filtro y efecto Grow
-   12. PÁGINA SERVICIOS - Bloques introductorios y cuadrícula 2x2 con efecto Push y Opacidad
-   13. PÁGINA FORMACIÓN - Lista de aprendizaje y llamada a la acción
-   14. PÁGINA PORTAFOLIOS - Galería de proyectos por categorías con efecto Float
-   15. PÁGINA CONTACTO - Mapa interactivo y tarjeta de perfil "Link in Bio"
-   16. PÁGINAS LEGALES (Aviso Legal, Privacidad, Cookies) - Maquetación de lectura
-   17. PIE DE PÁGINA (FOOTER) - Enlaces legales, logo central, menú secundario y copyright
-   18. BANNER DE COOKIES - Aviso inferior interactivo
-   19. EFECTOS DE IMÁGENES Y ANIMACIONES DE ENTRADA - Grow, Push, Float, Swing, SlideIn
-   20. DISEÑO RESPONSIVE (MEDIA QUERIES) - Adaptación a tablets (<=1024px) y móviles (<=767px)
+   4. CABECERA FIJA (HEADER) Y NAVEGACIÓN - Logo, menú escritorio suave y menú móvil
+   5. BLOQUE 1: HERO SLIDER DE INICIO (Efecto Dragon) - Diapositivas, máscara curva y botón animado
+   6. BLOQUE 2: SECCIÓN CITA / TESTIMONIO - Bloque gris claro con comillas
+   7. BLOQUE 3: APARTADO SOBRE MÍ - Sección "Mi misión" a 2 columnas
+   8. BLOQUE 4: SECCIÓN DISEÑO WEB (Efecto Parallax) - Imagen fija de fondo
+   9. BLOQUE 5: APARTADO SERVICIOS - Introducción, cuadrícula 2x2 y galería con filtros CSS
+   10. BLOQUE 6: APARTADO FORMACIÓN - Resumen a 2 columnas y programa detallado
+   11. BLOQUE 7: APARTADO PORTAFOLIOS - Galería de proyectos por categorías
+   12. BLOQUE 8: APARTADO CONTACTO - Mapa interactivo y tarjeta de perfil "Link in Bio"
+   13. PÁGINA DE LEGALIDAD UNIFICADA (legal.html) - Tarjetas de Aviso Legal, RGPD y Cookies
+   14. BLOQUE 9: PIE DE PÁGINA REDISEÑADO (FOOTER) - Estructura en 3 columnas manteniendo logo
+   15. SISTEMA UNIFICADO DE ANIMACIONES Y MOVIMIENTO SUAVE - Transiciones elegantes
+   16. DISEÑO RESPONSIVE (MEDIA QUERIES) - Adaptación a tablets (<=1024px) y móviles (<=767px)
    ========================================================================== */
 
 /* ==========================================================================
@@ -52,11 +48,15 @@
   --ancho-contenedor: 1140px; /* Ancho estándar de las secciones en Elementor */
   --ancho-cabecera: 1200px; /* Ancho de la barra de navegación superior en Astra */
   --ancho-estrecho: 800px; /* Ancho reducido para bloques de texto centrados */
+
+  /* Curva de transición profesional y suave unificada para toda la web */
+  --transicion-suave: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* ==========================================================================
    2. RESET Y ESTILOS BASE
-   Normaliza los márgenes del navegador y aplica la tipografía base.
+   Normaliza los márgenes del navegador, configura el desplazamiento suave
+   entre secciones de la página única y aplica la tipografía base.
    ========================================================================== */
 *,
 *::before,
@@ -69,6 +69,7 @@
 html {
   font-size: 100%; /* Equivale a 16px por defecto */
   scroll-behavior: smooth;
+  scroll-padding-top: 75px; /* Compensa la cabecera fija al navegar por anclas (#sobre-mi, etc.) */
 }
 
 body {
@@ -88,7 +89,6 @@ body {
 }
 
 /* Estilos tipográficos para todos los encabezados (H1 a H6) */
-/* 1rem = 16 px*/
 h1,
 h2,
 h3,
@@ -143,8 +143,8 @@ a {
   color: var(--color-primario);
   text-decoration: none;
   transition:
-    color 0.3s ease,
-    transform 0.3s ease;
+    color 0.35s var(--transicion-suave),
+    transform 0.35s var(--transicion-suave);
 }
 
 a:hover,
@@ -182,7 +182,7 @@ ul {
 
 /* ==========================================================================
    3. COMPONENTES REUTILIZABLES (Contenedores, Botones, Divisores)
-   Elementos que se repiten en varias páginas manteniendo la coherencia visual.
+   Elementos que se repiten en los distintos bloques manteniendo la coherencia.
    ========================================================================== */
 
 /* Contenedor centrado de ancho máximo (1140px) */
@@ -211,21 +211,38 @@ ul {
   border: none;
   cursor: pointer;
   transition:
-    background-color 0.3s ease,
-    transform 0.2s ease,
-    box-shadow 0.3s ease;
+    background-color 0.35s var(--transicion-suave),
+    transform 0.35s var(--transicion-suave),
+    box-shadow 0.35s var(--transicion-suave);
 }
 
 .boton-principal:hover,
 .boton-principal:focus {
   background-color: var(--color-primario-hover);
   color: var(--color-blanco) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(251, 32, 86, 0.25);
 }
 
 .boton-principal svg {
   width: 14px;
   height: 14px;
   fill: currentColor;
+}
+
+/* Etiqueta superior limpia para identificar cada gran apartado sin banners pesados */
+.etiqueta-seccion {
+  display: inline-block;
+  font-family: var(--fuente-titulos);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-primario);
+  background-color: rgba(251, 32, 86, 0.09);
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin-bottom: 12px;
 }
 
 /* Línea divisora decorativa rosa (#fb2056) debajo de los títulos H2 */
@@ -246,7 +263,7 @@ ul {
   margin: 15px auto 25px auto;
 }
 
-/* Divisor con texto lateral (usado en la página de Portafolios) */
+/* Divisor con texto lateral (usado en el bloque de Portafolios) */
 .divisor-con-texto {
   display: flex;
   align-items: center;
@@ -271,22 +288,25 @@ ul {
 }
 
 /* ==========================================================================
-   4. CABECERA (HEADER) Y NAVEGACIÓN PRINCIPAL
-   Barra superior con fondo #dadcec en escritorio, logo a la izquierda,
-   enlaces con efecto zoom (scale 1.2) y botón de Contacto a la derecha.
+   4. CABECERA FIJA (HEADER) Y NAVEGACIÓN PRINCIPAL
+   Barra superior pegajosa (sticky) para desplazarse cómodamente por toda la
+   web One-Page, con efecto hover suave y subrayado elegante.
    ========================================================================== */
 .cabecera-sitio {
-  background-color: var(--color-cabecera);
-  min-height: 70px;
-  position: relative;
+  background-color: rgba(218, 220, 236, 0.96);
+  backdrop-filter: blur(8px);
+  min-height: 75px;
+  position: sticky;
+  top: 0;
   z-index: 1000;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
 }
 
 .cabecera-contenedor {
   max-width: var(--ancho-cabecera);
   margin: 0 auto;
   padding: 0 20px;
-  min-height: 70px;
+  min-height: 75px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -299,8 +319,8 @@ ul {
 }
 
 .cabecera-logo img {
-  width: 100px;
-  max-width: 100px;
+  width: 85px;
+  max-width: 85px;
   height: auto;
 }
 
@@ -308,7 +328,7 @@ ul {
 .cabecera-derecha {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 24px;
 }
 
 .menu-navegacion {
@@ -319,35 +339,48 @@ ul {
 .menu-lista {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
 }
 
 .menu-item a {
+  position: relative;
   display: flex;
   align-items: center;
-  height: 70px;
-  padding: 0 16px;
+  height: 75px;
+  padding: 0 14px;
   color: var(--color-texto);
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 400;
-  transition: all 0.3s ease;
+  transition: color 0.35s var(--transicion-suave);
 }
 
-/* Efecto Zoom original de Astra en el menú de escritorio al pasar el ratón */
+/* Subrayado suave e indicador activo en lugar del zoom brusco anterior */
+.menu-item a::after {
+  content: "";
+  position: absolute;
+  bottom: 18px;
+  left: 14px;
+  right: 14px;
+  height: 2px;
+  background-color: var(--color-primario);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.35s var(--transicion-suave);
+}
+
 .menu-item a:hover,
 .menu-item a.activo {
   color: var(--color-primario-hover);
 }
 
-@media (min-width: 922px) {
-  .menu-item a:hover {
-    transform: scale(1.2);
-  }
+.menu-item a:hover::after,
+.menu-item a.activo::after {
+  transform: scaleX(1);
 }
 
 /* Botón "CONTACTO" de la cabecera */
 .boton-cabecera {
-  padding: 16px 40px;
+  padding: 14px 32px;
   font-size: 14px;
 }
 
@@ -371,12 +404,12 @@ ul {
 }
 
 /* ==========================================================================
-   5. PÁGINA DE INICIO: HERO SLIDER (Efecto Dragon)
-   Carrusel interactivo de 3 diapositivas a pantalla ancha con:
+   5. BLOQUE 1: HERO SLIDER DE INICIO (Efecto Dragon)
+   Se respeta íntegramente el carrusel interactivo de 3 diapositivas con:
    - Fondo desenfocado (blur 8px)
-   - Imagen superpuesta con máscara curva lateral (side-round-mask.svg)
+   - Imagen superpuesta con máscara curva lateral
    - Textos en mayúsculas y botón interactivo con círculo deslizante
-   - Enlaces a redes (LinkedIn, Behance) y selector numérico 01, 02, 03
+   - Enlaces a redes (LinkedIn, Behance, GitHub) y selector numérico 01, 02, 03
    ========================================================================== */
 .hero-slider {
   position: relative;
@@ -464,13 +497,10 @@ ul {
 
 @media (min-width: 1024px) {
   .slider-imagen-mascara {
-    /* Usamos el SVG con preserveAspectRatio='none' para que obedezca al porcentaje
-       de mask-size y funcione también abriendo index.html directamente (file://) */
     -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1638 1080' preserveAspectRatio='none'%3E%3Cpath d='M0,0h1489c0,0,149,178,149,540s-149,540-149,540H0V0z'/%3E%3C/svg%3E");
     mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1638 1080' preserveAspectRatio='none'%3E%3Cpath d='M0,0h1489c0,0,149,178,149,540s-149,540-149,540H0V0z'/%3E%3C/svg%3E");
     -webkit-mask-position: left;
     mask-position: left;
-    /* IMPORTANTE: Cambia AMBAS líneas al mismo porcentaje (ej. 60% 100% o 90% 100%) */
     -webkit-mask-size: 90% 100%;
     mask-size: 90% 100%;
     -webkit-mask-repeat: no-repeat;
@@ -708,13 +738,13 @@ ul {
 }
 
 /* ==========================================================================
-   6. PÁGINA DE INICIO: SECCIÓN CITA / TESTIMONIO
+   6. BLOQUE 2: SECCIÓN CITA / TESTIMONIO
    Franja horizontal con fondo gris claro (#f5f5f5), icono de comillas y
    cita célebre de Manuel Castells.
    ========================================================================== */
 .seccion-cita {
   background-color: var(--color-fondo-claro);
-  padding: 50px 0;
+  padding: 55px 0;
 }
 
 .cita-fila {
@@ -752,7 +782,40 @@ ul {
 }
 
 /* ==========================================================================
-   7. PÁGINA DE INICIO: SECCIÓN DISEÑO WEB (Efecto Parallax)
+   7. BLOQUE 3: APARTADO SOBRE MÍ
+   Sección "Mi misión" con 2 columnas e imagen con filtro cálido y sombra.
+   ========================================================================== */
+.seccion-sobre-mi {
+  padding: 90px 0;
+  background-color: var(--color-blanco);
+}
+
+.sobre-mi-fila {
+  display: flex;
+  align-items: center;
+}
+
+.sobre-mi-texto {
+  width: 50%;
+  padding-right: 80px;
+}
+
+.sobre-mi-imagen {
+  width: 50%;
+  padding-right: 30px;
+}
+
+/* Estilo de la imagen del teclado en Sobre mí */
+.imagen-estilo-mision {
+  width: 100%;
+  filter: brightness(105%) contrast(96%) saturate(74%) blur(0px)
+    hue-rotate(347deg);
+  border-radius: 14px;
+  box-shadow: 10px 10px 0px 1px rgba(0, 0, 0, 0.07);
+}
+
+/* ==========================================================================
+   8. BLOQUE 4: SECCIÓN DISEÑO WEB (Efecto Parallax)
    Fondo con imagen fija al hacer scroll (background-attachment: fixed),
    superposición oscura al 60% de opacidad y contenido en la mitad derecha.
    ========================================================================== */
@@ -762,13 +825,13 @@ ul {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 170px 0;
+  padding: 150px 0;
   color: var(--color-blanco);
 }
 
 @media (min-width: 1025px) {
   .seccion-parallax-diseno {
-    background-attachment: fixed; /*Crea el efecto Parallax en ordenadores*/
+    background-attachment: fixed; /* Crea el efecto Parallax en ordenadores */
   }
 }
 
@@ -800,190 +863,14 @@ ul {
 }
 
 /* ==========================================================================
-   8. PÁGINA DE INICIO: SECCIÓN FORMACIÓN
-   Estructura de 2 columnas (50% imagen a la izquierda, 50% texto a la derecha).
-   ========================================================================== */
-.seccion-inicio-formacion {
-  background-color: var(--color-blanco);
-  padding: 80px 0;
-}
-
-.fila-dos-columnas {
-  display: flex;
-  align-items: center;
-  gap: 100px;
-}
-
-.columna-mitad {
-  width: 50%;
-}
-
-.columna-mitad img {
-  width: 100%;
-  border-radius: 4px;
-}
-
-.seccion-inicio-formacion .boton-principal {
-  margin-top: 20px;
-}
-
-/* ==========================================================================
-   9. PÁGINA DE INICIO: SECCIÓN SERVICIOS Y GALERÍA CON FILTROS CSS
-   Estructura de 3 columnas (1/3 texto a la izquierda + 2/3 galería de 4 fotos).
-   Respeta los filtros exactos de brillo, contraste, saturación y rotación de tono.
-   ========================================================================== */
-.seccion-inicio-servicios {
-  padding: 120px 0;
-  background-color: var(--color-blanco);
-}
-
-.fila-tres-columnas {
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-}
-
-.columna-tercio-texto {
-  width: 33.33%;
-  padding-top: 10px;
-  padding-right: 40px;
-}
-
-.columna-tercio-texto .boton-principal {
-  margin-top: 17px;
-}
-
-.columna-tercio-galeria {
-  width: 33.33%;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.galeria-item {
-  overflow: hidden;
-  border-radius: 4px;
-}
-
-.galeria-item img {
-  width: 100%;
-  border-radius: 4px;
-  transition:
-    transform 0.4s ease,
-    filter 0.4s ease;
-}
-
-/* Efecto de filtro CSS 1 (aplicado a imagen Diseño Web e imagen Seguridad Web) */
-.filtro-imagen-calido {
-  filter: brightness(103%) contrast(95%) saturate(110%) blur(0px)
-    hue-rotate(346deg);
-}
-
-/* Efecto de filtro CSS 2 (aplicado a las dos imágenes de Redes Sociales) */
-.filtro-imagen-vibrante {
-  filter: brightness(103%) contrast(96%) saturate(134%) blur(0px)
-    hue-rotate(0deg);
-}
-
-.galeria-item:hover img {
-  transform: scale(1.03);
-}
-
-/* ==========================================================================
-   10. CABECERAS DE PÁGINAS INTERNAS (HERO SECUNDARIO)
-   Banner superior de Sobre mí, Servicios, Formación, Portafolios y Contacto.
-   ========================================================================== */
-.hero-pagina-interna {
-  position: relative;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 230px 0;
-  text-align: center;
-}
-
-/* Capa oscura al 40% de opacidad (--overlay-opacity: 0.4) */
-.hero-pagina-interna::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: var(--color-oscuro);
-  opacity: 0.4;
-}
-
-.hero-pagina-interna .contenedor {
-  position: relative;
-  z-index: 2;
-  max-width: var(--ancho-estrecho);
-}
-
-.hero-pagina-interna h1 {
-  color: var(--color-blanco);
-  margin: 0;
-}
-
-/* Imágenes de fondo específicas para cada página interna (renombradas para SEO) */
-.hero-sobre-mi {
-  background-image: url("../img/hero-sobre-mi-disenadora-web-ilq-digital.jpg");
-}
-
-.hero-servicios {
-  background-image: url("../img/hero-servicios-diseno-mantenimiento-web.jpg");
-}
-
-.hero-formacion {
-  background-image: url("../img/formacion-personalizada-wordpress-gestion-web.jpg");
-}
-
-.hero-portafolios {
-  background-image: url("../img/hero-portafolio-proyectos-desarrollo-diseno-web.jpg");
-}
-
-.hero-contacto {
-  background-image: url("../img/hero-contacto-consultoria-diseno-web-ilq-digital.jpg");
-}
-
-/* ==========================================================================
-   11. PÁGINA SOBRE MÍ
-   Sección "Mi misión" con 2 columnas e imagen con filtro, sombra desplazada
-   y efecto de crecimiento suave al pasar el ratón (elementor-animation-grow).
-   ========================================================================== */
-.seccion-sobre-mi {
-  padding: 100px 0 90px 0;
-}
-
-.sobre-mi-fila {
-  display: flex;
-  align-items: center;
-}
-
-.sobre-mi-texto {
-  width: 50%;
-  padding-right: 100px;
-}
-
-.sobre-mi-imagen {
-  width: 50%;
-  padding-right: 50px;
-}
-
-/* Estilo exacto de la imagen del teclado en Sobre mí (post-541.css) */
-.imagen-estilo-mision {
-  width: 100%;
-  filter: brightness(105%) contrast(96%) saturate(74%) blur(0px)
-    hue-rotate(347deg);
-  border-radius: 10px;
-  box-shadow: 10px 10px 0px 1px rgba(0, 0, 0, 0.07);
-}
-
-/* ==========================================================================
-   12. PÁGINA SERVICIOS
-   Introducción centrada con citas (blockquotes) y cuadrícula 2x2 de servicios
-   con bordes redondeados de 30px, filtro de color, sombra y opacidad 0.5 en hover.
+   9. BLOQUE 5: APARTADO SERVICIOS (INTRO, CUADRÍCULA 2x2 Y GALERÍA)
+   Introducción centrada con citas (blockquotes), cuadrícula 2x2 de servicios
+   y galería inferior de 3 columnas con filtros CSS.
    ========================================================================== */
 .seccion-servicios-intro {
-  padding: 90px 0 50px 0;
+  padding: 85px 0 50px 0;
   text-align: center;
+  background-color: var(--color-blanco);
 }
 
 .servicios-intro-contenedor {
@@ -993,21 +880,25 @@ ul {
 }
 
 .cita-servicio {
-  border-left: 3px solid var(--color-gris-borde);
-  padding: 10px 20px;
-  margin-bottom: 24px;
+  border-left: 3px solid var(--color-primario);
+  background-color: var(--color-fondo-claro);
+  border-radius: 0 8px 8px 0;
+  padding: 16px 24px;
+  margin-bottom: 20px;
   color: var(--color-texto);
   font-style: normal;
+  text-align: left;
 }
 
 .seccion-servicios-cuadricula {
-  padding-bottom: 120px;
+  padding: 30px 0 80px 0;
+  background-color: var(--color-blanco);
 }
 
 .servicios-fila {
   display: flex;
-  gap: 30px;
-  margin-bottom: 40px;
+  gap: 35px;
+  margin-bottom: 45px;
 }
 
 .servicios-fila:last-child {
@@ -1033,31 +924,23 @@ ul {
   width: 100%;
 }
 
-/* Estilo exacto de las 4 imágenes de Servicios (post-542.css) */
+/* Estilo de las 4 imágenes de Servicios */
 .imagen-estilo-servicio {
-  width: 88%;
+  width: 90%;
   filter: brightness(103%) contrast(96%) saturate(81%) blur(0px)
     hue-rotate(336deg);
-  border-radius: 30px;
+  border-radius: 24px;
   box-shadow: 10px 10px 0px 1px rgba(0, 0, 0, 0.07);
-  transition:
-    opacity 0.35s ease,
-    transform 0.35s ease;
-}
-
-/* Efecto Hover de opacidad 0.5 original de la página Servicios */
-.tarjeta-servicio-imagen-envoltorio:hover .imagen-estilo-servicio {
-  opacity: 0.5;
 }
 
 .tarjeta-servicio-contenido {
   width: 100%;
-  padding: 27px 40px 0 40px;
+  padding: 25px 35px 0 35px;
 }
 
 .tarjeta-servicio-contenido h5 {
   margin-bottom: 12px;
-  font-size: 18px;
+  font-size: 19px;
 }
 
 .tarjeta-servicio-contenido h5 a {
@@ -1072,18 +955,94 @@ ul {
   margin-bottom: 6px;
 }
 
+/* Subbloque Galería de Servicios a 3 columnas */
+.seccion-inicio-servicios {
+  padding: 80px 0 100px 0;
+  background-color: var(--color-fondo-claro);
+}
+
+.fila-tres-columnas {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.columna-tercio-texto {
+  width: 33.33%;
+  padding-top: 10px;
+  padding-right: 30px;
+}
+
+.columna-tercio-texto .boton-principal {
+  margin-top: 17px;
+}
+
+.columna-tercio-galeria {
+  width: 33.33%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.galeria-item {
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.galeria-item img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Efecto de filtro CSS 1 (aplicado a imagen Diseño Web e imagen Seguridad Web) */
+.filtro-imagen-calido {
+  filter: brightness(103%) contrast(95%) saturate(110%) blur(0px)
+    hue-rotate(346deg);
+}
+
+/* Efecto de filtro CSS 2 (aplicado a las dos imágenes de Redes Sociales) */
+.filtro-imagen-vibrante {
+  filter: brightness(103%) contrast(96%) saturate(134%) blur(0px)
+    hue-rotate(0deg);
+}
+
 /* ==========================================================================
-   13. PÁGINA FORMACIÓN
-   Contenido explicativo centrado (máximo 1000px) con lista de aprendizaje.
+   10. BLOQUE 6: APARTADO FORMACIÓN
+   Estructura de 2 columnas superior + programa detallado con lista de puntos.
    ========================================================================== */
+.seccion-inicio-formacion {
+  background-color: var(--color-blanco);
+  padding: 85px 0 40px 0;
+}
+
+.fila-dos-columnas {
+  display: flex;
+  align-items: center;
+  gap: 70px;
+}
+
+.columna-mitad {
+  width: 50%;
+}
+
+.columna-mitad img {
+  width: 100%;
+  border-radius: 14px;
+  box-shadow: 10px 10px 0px 1px rgba(0, 0, 0, 0.06);
+}
+
 .seccion-formacion-detalle {
-  padding: 50px 0;
+  padding: 30px 0 95px 0;
+  background-color: var(--color-blanco);
 }
 
 .formacion-contenedor {
-  max-width: 1000px;
+  max-width: 960px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 40px 45px;
+  background-color: var(--color-fondo-claro);
+  border-radius: 16px;
+  border-left: 4px solid var(--color-primario);
 }
 
 .lista-formacion {
@@ -1093,35 +1052,77 @@ ul {
 }
 
 .lista-formacion li {
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .formacion-cta {
-  margin-top: 30px;
+  margin-top: 28px;
 }
 
 /* ==========================================================================
-   14. PÁGINA PORTAFOLIOS
-   Introducción y 4 bloques de proyectos (3 imágenes por fila) con
-   border-radius: 50px, sombra pronunciada y animación flotante (float).
+   11. BLOQUE 7: APARTADO PORTAFOLIOS
+   Introducción y 4 bloques de proyectos (3 imágenes por fila) con bordes
+   redondeados y transición suave unificada.
    ========================================================================== */
+.seccion-portafolios-bloque {
+  background-color: var(--color-fondo-claro);
+  padding-top: 0;
+  padding-bottom: 30px;
+}
+
+/* Subbloque 7.1: Cabecera e introducción de Mis proyectos con imagen de banner difuminada */
 .seccion-portafolios-intro {
-  padding: 50px 0;
+  position: relative;
+  overflow: hidden;
+  padding: 105px 0 95px 0;
+  margin-bottom: 65px;
   text-align: center;
+  color: var(--color-blanco);
+}
+
+/* Capa de imagen de fondo del antiguo banner de Portafolios con desenfoque (blur) */
+.seccion-portafolios-intro::before {
+  content: "";
+  position: absolute;
+  inset: -15px;
+  background-image: url("../img/hero-portafolio-proyectos-desarrollo-diseno-web.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(6px) brightness(0.42);
+  transform: scale(1.05);
+  z-index: 0;
+}
+
+.seccion-portafolios-intro .contenedor {
+  position: relative;
+  z-index: 1;
+  max-width: 920px;
+}
+
+.seccion-portafolios-intro .etiqueta-seccion {
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
+}
+
+.seccion-portafolios-intro h2 {
+  color: var(--color-blanco);
 }
 
 .seccion-portafolios-intro h6 {
+  color: rgba(255, 255, 255, 0.94);
   font-weight: 700;
   margin-bottom: 18px;
-  line-height: 1.6em;
+  line-height: 1.65em;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
 }
 
 .bloque-categoria-portafolio {
-  padding-bottom: 50px;
+  padding-bottom: 65px;
 }
 
 .cabecera-categoria-portafolio {
-  margin-bottom: 25px;
+  margin-bottom: 28px;
 }
 
 .cabecera-categoria-portafolio h2 {
@@ -1138,24 +1139,25 @@ ul {
   width: 33.33%;
 }
 
-/* Estilo exacto de las capturas de proyectos en Portafolios (post-543.css) */
+/* Estilo de las capturas de proyectos en Portafolios */
 .imagen-estilo-portafolio {
   width: 100%;
-  border-radius: 50px;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  border-radius: 36px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.14);
 }
 
 /* ==========================================================================
-   15. PÁGINA CONTACTO
+   12. BLOQUE 8: APARTADO CONTACTO
    Sección a 2 columnas: Mapa de Google Maps (Anna, Valencia) a la izquierda
    y tarjeta "Link in Bio" con foto circular, WhatsApp, Email y GitHub a la derecha.
    ========================================================================== */
 .seccion-contacto {
-  padding: 50px 0 80px 0;
+  padding: 90px 0 100px 0;
+  background-color: var(--color-blanco);
 }
 
 .contacto-encabezado {
-  margin-bottom: 30px;
+  margin-bottom: 35px;
 }
 
 .contacto-fila {
@@ -1171,24 +1173,26 @@ ul {
 
 .contacto-columna-mapa iframe {
   width: 100%;
-  height: 500px;
+  height: 100%;
+  min-height: 480px;
   border: 0;
-  border-radius: 8px;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
 }
 
-/* Tarjeta Link-in-Bio de ILQ Digital (post-544.css) */
+/* Tarjeta Link-in-Bio de ILQ Digital */
 .tarjeta-bio {
   background-color: var(--color-blanco);
   border: 1px solid var(--color-gris-borde);
-  border-radius: 12px;
-  padding: 40px 30px;
+  border-radius: 14px;
+  padding: 45px 35px;
   text-align: center;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
 }
 
 .tarjeta-bio-foto {
@@ -1230,12 +1234,15 @@ ul {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
   color: #54595f;
   background-color: var(--color-fondo-claro);
-  transition: all 0.3s ease;
+  transition:
+    background-color 0.35s var(--transicion-suave),
+    color 0.35s var(--transicion-suave),
+    transform 0.35s var(--transicion-suave);
 }
 
 .tarjeta-bio-iconos a:hover {
@@ -1262,287 +1269,347 @@ ul {
   font-weight: 700;
   text-transform: none;
   transition:
-    background-color 0.3s ease,
-    transform 0.2s ease;
+    background-color 0.35s var(--transicion-suave),
+    transform 0.35s var(--transicion-suave),
+    box-shadow 0.35s var(--transicion-suave);
 }
 
 .boton-bio-github:hover {
   background-color: var(--color-primario-hover);
   transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(251, 32, 86, 0.22);
 }
 
 /* ==========================================================================
-   16. PÁGINAS LEGALES (Aviso Legal, Privacidad, Cookies)
-   Diseño limpio y estructurado para facilitar la lectura de textos jurídicos.
+   13. PÁGINA DE LEGALIDAD UNIFICADA (legal.html)
+   Diseño limpio en 3 tarjetas claras para el Aviso Legal (LSSI-CE),
+   Protección de Datos (RGPD/LOPDGDD) y Declaración sin Cookies.
    ========================================================================== */
-.seccion-pagina-legal {
-  padding: 70px 0 90px 0;
+.seccion-legal-integrada {
+  padding: 85px 0 95px 0;
+  background-color: var(--color-fondo-claro);
+  border-top: 1px solid var(--color-gris-borde);
 }
 
-.contenedor-legal {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 20px;
+.legal-encabezado {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 45px auto;
 }
 
-.contenedor-legal h1 {
-  font-size: 2.5rem;
-  margin-bottom: 30px;
+.legal-subtitulo {
+  font-size: 0.98rem;
+  color: var(--color-texto);
+}
+
+.legal-tarjetas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  align-items: stretch;
+}
+
+.tarjeta-legal {
+  background-color: var(--color-blanco);
+  border: 1px solid var(--color-gris-borde);
+  border-top: 3px solid var(--color-primario);
+  border-radius: 14px;
+  padding: 30px 26px;
+  font-size: 0.94rem;
+  line-height: 1.65;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+}
+
+.tarjeta-legal h2,
+.tarjeta-legal h3 {
+  font-size: 1.2rem;
   color: var(--color-oscuro);
+  margin-bottom: 14px;
 }
 
-.contenedor-legal h2,
-.contenedor-legal h3 {
-  margin-top: 35px;
-  margin-bottom: 15px;
-  color: var(--color-oscuro);
+.legal-volver {
+  text-align: center;
+  margin-top: 45px;
 }
 
-.contenedor-legal h4 {
-  margin-top: 25px;
-  margin-bottom: 12px;
+.tarjeta-legal p {
+  margin-bottom: 14px;
 }
 
-.contenedor-legal ul {
+.lista-legal {
   list-style: disc;
-  padding-left: 25px;
-  margin-bottom: 20px;
+  padding-left: 20px;
+  margin-bottom: 14px;
 }
 
-.contenedor-legal li {
-  margin-bottom: 10px;
+.lista-legal li {
+  margin-bottom: 8px;
+}
+
+.lista-legal li:last-child {
+  margin-bottom: 0;
 }
 
 /* ==========================================================================
-   17. PIE DE PÁGINA (FOOTER - post-1549.css)
-   Fondo negro suave (#191919) con 3 columnas (Enlaces legales a la izquierda,
-   Logotipo completo en el centro, Menú de páginas a la derecha) y Copyright.
+   14. BLOQUE 9: PIE DE PÁGINA REDISEÑADO (FOOTER)
+   Nueva estructura profesional de 3 columnas en la parte superior y barra
+   de copyright inferior, conservando el logotipo oficial de ILQ Digital.
    ========================================================================== */
 .pie-pagina {
   background-color: var(--color-oscuro);
   color: var(--color-blanco);
-  padding: 45px 0 25px 0;
-  margin-top: 5px;
+  padding: 65px 0 30px 0;
+  border-top: 4px solid var(--color-primario);
 }
 
-.pie-fila-principal {
+.pie-grid-principal {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr;
+  gap: 50px;
+  padding-bottom: 45px;
+  align-items: start;
+}
+
+/* Columna 1 del Footer: Marca y Logos */
+.pie-bloque-marca {
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
-  padding-bottom: 30px;
+  gap: 20px;
 }
 
-.pie-columna-izquierda,
-.pie-columna-centro,
-.pie-columna-derecha {
-  width: 33.33%;
+.pie-logo-principal img {
+  width: 115px;
+  height: 115px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
-.pie-columna-izquierda {
+.pie-marca-resumen p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.78);
+  margin: 0;
+}
+
+.pie-marca-cabecera {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding-top: 25px;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
 }
 
-.pie-columna-centro {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-}
-
-.pie-columna-centro img {
-  width: 150px;
-  height: 150px;
+.pie-icono-mini {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
   object-fit: contain;
 }
 
-.pie-columna-derecha {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+.pie-marca-cabecera span {
+  font-family: var(--fuente-titulos);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-blanco);
+  letter-spacing: 0.5px;
 }
 
+/* Títulos de las columnas del Footer */
+.pie-titulo-columna {
+  font-family: var(--fuente-titulos);
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-blanco);
+  margin-bottom: 18px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.pie-titulo-columna::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 32px;
+  height: 2px;
+  background-color: var(--color-primario);
+}
+
+/* Listas de enlaces del Footer */
 .pie-lista-enlaces li {
-  margin-bottom: 8px;
-}
-
-.pie-columna-derecha .pie-lista-enlaces {
-  text-align: right;
+  margin-bottom: 10px;
 }
 
 .pie-lista-enlaces a {
-  color: var(--color-blanco);
+  color: rgba(255, 255, 255, 0.8);
   font-size: 14px;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  transition: color 0.3s ease;
+  letter-spacing: 0.4px;
+  transition:
+    color 0.3s var(--transicion-suave),
+    padding-left 0.3s var(--transicion-suave);
 }
 
 .pie-lista-enlaces a:hover {
   color: var(--color-primario);
+  padding-left: 4px;
+}
+
+/* Columna 4 del Footer: Contacto y Redes */
+.pie-contacto-item {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.pie-contacto-item a {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.pie-contacto-item a:hover {
+  color: var(--color-primario);
+}
+
+.pie-redes-lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.pie-redes-lista a {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--color-blanco);
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 7px 14px;
+  border-radius: 20px;
+  transition:
+    background-color 0.3s var(--transicion-suave),
+    transform 0.3s var(--transicion-suave);
+}
+
+.pie-redes-lista a:hover {
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
+  transform: translateY(-2px);
+}
+
+/* Barra inferior de Copyright (también compatible con páginas legales) */
+.pie-barra-inferior,
+.pie-copyright {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .pie-copyright {
-  text-align: center;
-  padding-top: 15px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  font-size: 14px;
-  color: var(--color-blanco);
+  justify-content: center;
 }
 
+.pie-barra-inferior p,
+.pie-copyright p {
+  margin: 0;
+}
+
+.pie-barra-inferior a,
 .pie-copyright a {
   color: var(--color-primario);
 }
 
+.pie-barra-inferior a:hover,
 .pie-copyright a:hover {
   color: var(--color-blanco);
 }
 
-/* ==========================================================================
-   18. BANNER DE COOKIES
-   Barra informativa fija en la parte inferior hasta que el usuario acepta.
-   ========================================================================== */
-.aviso-cookies {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: rgba(25, 25, 25, 0.96);
-  color: var(--color-blanco);
-  padding: 15px 20px;
-  z-index: 9999;
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
+.pie-volver-arriba {
   font-size: 13px;
-}
-
-.aviso-cookies.oculto {
-  display: none;
-}
-
-.aviso-cookies p {
-  margin: 0;
-}
-
-.aviso-cookies-botones {
-  display: flex;
-  gap: 10px;
-}
-
-.boton-cookie {
-  background-color: var(--color-primario);
-  color: var(--color-blanco) !important;
-  border: none;
-  border-radius: 20px;
-  padding: 8px 20px;
-  font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
-  cursor: pointer;
+  letter-spacing: 0.8px;
+  color: var(--color-blanco) !important;
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 8px 16px;
+  border-radius: 20px;
 }
 
-.boton-cookie--secundario {
-  background-color: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.4);
+.pie-volver-arriba:hover {
+  background-color: var(--color-primario);
 }
 
 /* ==========================================================================
-   19. EFECTOS DE IMÁGENES Y ANIMACIONES DE ENTRADA (Elementor Animations)
-   Aquí se definen los efectos interactivos sobre las imágenes (Grow, Push, Float)
-   y las animaciones de aparición al hacer scroll (Swing, SlideInLeft, SlideInRight).
+   15. SISTEMA UNIFICADO DE ANIMACIONES Y MOVIMIENTO SUAVE
+   Se han eliminado los efectos dispares y bruscos (swing/balanceo, push,
+   entradas laterales cruzadas y pérdida de opacidad al 50%) para unificarlos
+   en un único patrón de movimiento suave, limpio y profesional:
+   1. Aparición al hacer scroll: Fade-up sutil (desplazamiento vertical de 22px).
+   2. Interacción al pasar el ratón (Hover): Elevación suave de -5px con sombra.
    ========================================================================== */
 
-/* Efecto 1: GROW (Crecimiento suave en Sobre mí) */
-.efecto-hover-grow {
-  transition:
-    transform 0.35s ease,
-    filter 0.35s ease;
-}
-
-.efecto-hover-grow:hover {
-  transform: scale(1.08);
-}
-
-/* Efecto 2: PUSH (Pulsación en las imágenes de Servicios) */
-@keyframes animacion-push {
-  50% {
-    transform: scale(0.92);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-.efecto-hover-push:hover {
-  animation: animacion-push 0.35s linear 1;
-}
-
-/* Efecto 3: FLOAT (Levitación hacia arriba en las 12 imágenes de Portafolios) */
+/* Efecto Hover Suave Unificado para todas las imágenes y tarjetas interactivas */
+.efecto-hover-suave,
+.efecto-hover-grow,
+.efecto-hover-push,
 .efecto-hover-float {
   transition:
-    transform 0.3s ease-out,
-    box-shadow 0.3s ease-out;
+    transform 0.45s var(--transicion-suave),
+    box-shadow 0.45s var(--transicion-suave),
+    filter 0.45s var(--transicion-suave);
 }
 
+.efecto-hover-suave:hover,
+.efecto-hover-grow:hover,
+.efecto-hover-push:hover,
 .efecto-hover-float:hover {
-  transform: translateY(-8px);
+  transform: translateY(-5px) scale(1.015);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.14);
 }
 
-/* Animaciones al hacer scroll (activadas por IntersectionObserver en main.js) */
+/* Animación de entrada al hacer scroll unificada (Fade-Up suave y progresivo) */
 .animar-al-scroll {
   opacity: 0;
+  transform: translateY(22px);
   transition:
-    opacity 0.8s ease,
-    transform 0.8s ease;
+    opacity 0.75s var(--transicion-suave),
+    transform 0.75s var(--transicion-suave);
+  will-change: opacity, transform;
 }
 
 .animar-al-scroll.visible {
   opacity: 1;
-  transform: none;
+  transform: translateY(0);
 }
 
-/* Entrada desde la izquierda (usada en fila 1 de Servicios) */
-.animacion-slide-izquierda {
-  transform: translateX(-60px);
+/* Retardo escalonado sutil cuando hay dos tarjetas en la misma fila */
+.servicios-fila .tarjeta-servicio:nth-child(2).animar-al-scroll {
+  transition-delay: 0.12s;
 }
 
-/* Entrada desde la derecha (usada en fila 2 de Servicios) */
-.animacion-slide-derecha {
-  transform: translateX(60px);
-}
-
-/* Entrada con balanceo suave / Swing (usada en secciones de Inicio) */
-@keyframes animacion-swing {
-  20% {
-    transform: rotate3d(0, 0, 1, 6deg);
+/* Respeto por la preferencia de reducción de movimiento del sistema operativo */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
-  40% {
-    transform: rotate3d(0, 0, 1, -4deg);
+  .animar-al-scroll {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
-  60% {
-    transform: rotate3d(0, 0, 1, 2deg);
+  .efecto-hover-suave,
+  .boton-principal {
+    transition: none;
   }
-  80% {
-    transform: rotate3d(0, 0, 1, -1deg);
-  }
-  100% {
-    transform: rotate3d(0, 0, 1, 0deg);
-  }
-}
-
-.animacion-swing.visible {
-  transform-origin: top center;
-  animation: animacion-swing 0.9s ease both;
 }
 
 /* ==========================================================================
-   20. DISEÑO RESPONSIVE (MEDIA QUERIES)
-   Adaptación fiel para tablets (máx. 1024px) y móviles (máx. 767px).
+   16. DISEÑO RESPONSIVE (MEDIA QUERIES)
+   Adaptación para tablets (máx. 1024px) y móviles (máx. 767px).
    ========================================================================== */
 @media (max-width: 1024px) {
   h1 {
@@ -1582,15 +1649,11 @@ ul {
   }
 
   .seccion-parallax-diseno {
-    padding: 80px 40px;
+    padding: 90px 40px;
   }
 
   .fila-dos-columnas {
     gap: 40px;
-  }
-
-  .hero-pagina-interna {
-    padding: 110px 30px;
   }
 
   .sobre-mi-texto {
@@ -1600,10 +1663,19 @@ ul {
   .sobre-mi-imagen {
     padding-right: 0;
   }
+
+  .pie-grid-principal {
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+  }
+
+  .legal-tarjetas-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 921px) {
-  /* En móvil/tablet la cabecera pasa a fondo blanco y muestra botón hamburguesa */
+  /* En móvil/tablet la cabecera muestra el botón hamburguesa */
   .cabecera-sitio {
     background-color: var(--color-blanco);
     border-bottom: 1px solid var(--color-gris-borde);
@@ -1616,7 +1688,7 @@ ul {
   .cabecera-derecha {
     display: none;
     position: absolute;
-    top: 70px;
+    top: 75px;
     left: 0;
     width: 100%;
     background-color: var(--color-blanco);
@@ -1643,6 +1715,10 @@ ul {
     border-bottom: 1px solid var(--color-gris-borde);
   }
 
+  .menu-item a::after {
+    display: none;
+  }
+
   .boton-cabecera {
     align-self: flex-start;
   }
@@ -1653,7 +1729,7 @@ ul {
     font-size: 2.25rem;
   }
   h2 {
-    font-size: 1.65rem;
+    font-size: 1.8rem;
   }
 
   .hero-slider {
@@ -1699,8 +1775,36 @@ ul {
   .servicios-fila,
   .fila-proyectos-portafolio,
   .contacto-fila,
-  .pie-fila-principal {
+  .pie-bloque-marca,
+  .pie-barra-inferior {
     flex-direction: column;
+  }
+
+  .pie-grid-principal {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .pie-bloque-marca {
+    align-items: center;
+  }
+
+  .pie-marca-cabecera {
+    justify-content: center;
+  }
+
+  .pie-titulo-columna::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .pie-redes-lista {
+    justify-content: center;
+  }
+
+  .pie-barra-inferior {
+    gap: 15px;
+    text-align: center;
   }
 
   .columna-mitad,
@@ -1711,10 +1815,7 @@ ul {
   .tarjeta-servicio,
   .item-proyecto-portafolio,
   .contacto-columna-mapa,
-  .contacto-columna-tarjeta,
-  .pie-columna-izquierda,
-  .pie-columna-centro,
-  .pie-columna-derecha {
+  .contacto-columna-tarjeta {
     width: 100%;
     padding-right: 0;
   }
@@ -1723,23 +1824,15 @@ ul {
     margin-bottom: 35px;
   }
 
+  .formacion-contenedor {
+    padding: 25px 20px;
+  }
+
   .tarjeta-servicio-contenido {
     padding: 20px 10px 0 10px;
   }
 
   .imagen-estilo-servicio {
     width: 100%;
-  }
-
-  .pie-columna-izquierda,
-  .pie-columna-centro,
-  .pie-columna-derecha {
-    align-items: center;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-
-  .pie-columna-derecha .pie-lista-enlaces {
-    text-align: center;
   }
 }
